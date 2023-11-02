@@ -1,0 +1,81 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[HideInInspector]
+public enum EnemyStates
+{
+    walking,
+    attacking
+}
+
+public class EnemyBehaviour : MonoBehaviour
+{
+
+    [HideInInspector]
+    private targetAwareness _targetAwareness;
+    public EnemyStates state;
+    private Movement movement;
+
+    [Header("Vida del enemigo")]
+    [SerializeField] float health, maxhealth = 5f;
+    [SerializeField] FloatingHealthbar healthbar;
+
+
+    // Start is called before the first frame update
+    void Awake()
+    {
+        _targetAwareness = GetComponent<targetAwareness>();
+        state = EnemyStates.walking;
+        movement = GetComponent<Movement>();
+    }
+
+    private void Start()
+    {
+        health = maxhealth;
+        healthbar.UpdateHealthBar(health, maxhealth);
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        if (_targetAwareness.IsAware) 
+        {
+            state = EnemyStates.attacking;
+        } else
+        {
+            state = EnemyStates.walking;
+        }
+
+        if (state == EnemyStates.walking)
+        {
+            movement.StartWalking();
+        }
+        if (state == EnemyStates.attacking)
+        {
+            movement.changeDirection(_targetAwareness.ClosestTarget.position);
+
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Verifica si la colisi�n es con el objeto objetivo
+        if (collision.gameObject.CompareTag("CannonBall"))
+        {
+            Destroy(collision.gameObject);
+            TakeDamage(1f);
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        healthbar.UpdateHealthBar(health, maxhealth);
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+}
