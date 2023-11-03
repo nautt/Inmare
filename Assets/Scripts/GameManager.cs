@@ -17,11 +17,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (inventory == null){
+            inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+        }
+        /*
         if (inventory.nDabloons >= coinsObjective)
         {
             Debug.Log("Game finished");
             Application.Quit();
             // UnityEditor.EditorApplication.isPlaying = false;
-        }
+        }*/
     }
 }

@@ -48,12 +48,14 @@ namespace PirateMap
         private void OnTriggerEnter(Collider collision)
         {
             if (collision.gameObject.tag == "Player")
-            {
-                Debug.Log(this.tag + " entering " + collision.gameObject.tag);
+            {                
+                Debug.Log("aqui hay que hacer la weaita de la tienda");
                 playerMagnetArea.SetActive(false);
                 playerCollector.SetActive(false);
                 // target = collision.gameObject;
                 InvokeRepeating("SpawnNextChest", 0, 5f);
+
+                //Aquí llamar canva de tienda
             }
         }
 
@@ -62,7 +64,6 @@ namespace PirateMap
         {
             if (collision.gameObject.tag == "Player")
             {
-                Debug.Log(this.tag + " exiting " + collision.gameObject.tag);
                 CancelInvoke();
                 playerMagnetArea.SetActive(true);
                 playerCollector.SetActive(true);

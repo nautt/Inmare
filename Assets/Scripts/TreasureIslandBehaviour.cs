@@ -33,8 +33,7 @@ namespace PirateMap
             islandData = new(this.transform.position);
             lootCounter = islandData.remainingLoot;
             player = GameObject.FindGameObjectWithTag("Player");
-            totalWeight = silverChestWeight + bronzeChestWeight + goldenChestWeight + rareChestWeight;
-            Debug.Log(totalWeight);
+            totalWeight = silverChestWeight + bronzeChestWeight + goldenChestWeight + rareChestWeight;            
 
             silverChestWeight += bronzeChestWeight;
             goldenChestWeight += silverChestWeight;
@@ -93,8 +92,7 @@ namespace PirateMap
         private GameObject RandomSpawner()
         {   
             GameObject chestInstance;
-            var dice = Random.Range(0, totalWeight);
-            Debug.Log("Dice: " + dice);
+            var dice = Random.Range(0, totalWeight);            
             if (dice >= 0 && dice < bronzeChestWeight)
                 chestInstance = Instantiate(bronzeChest);
             else if (dice >= bronzeChestWeight && dice < silverChestWeight)

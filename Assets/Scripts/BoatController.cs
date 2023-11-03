@@ -46,10 +46,12 @@ public class BoatController : MonoBehaviour
 
         health = maxhealth;
         healthbar.UpdateHealthBar(health, maxhealth);
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();        
 
         mainCamera.enabled = true;
+        
         secondaryCamera.enabled = false;
+        secondaryCamera.GetComponent<AudioListener>().enabled = false;
     }
 
     void Update()
@@ -58,6 +60,13 @@ public class BoatController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q)) {
             mainCamera.enabled = !mainCamera.enabled;
             secondaryCamera.enabled = !secondaryCamera.enabled;
+            if (secondaryCamera.enabled == true){
+                secondaryCamera.GetComponent<AudioListener>().enabled = true;
+                mainCamera.GetComponent<AudioListener>().enabled = false;
+            }else{
+                secondaryCamera.GetComponent<AudioListener>().enabled = false;
+                mainCamera.GetComponent<AudioListener>().enabled = true;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && Time.time - tiempoUltimoDisparo >= tiempoCooldown)
