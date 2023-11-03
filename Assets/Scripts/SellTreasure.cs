@@ -17,6 +17,8 @@ namespace PirateMap
         public GameObject silverChest;
         public GameObject goldenChest;
         public GameObject rareChest;
+        GameObject[] storeCanvases;
+        GameObject[] MainCanvases;
 
         // Start is called before the first frame update
         void Start()
@@ -26,6 +28,7 @@ namespace PirateMap
             playerMagnetArea = GameObject.Find("MagnetArea");
             playerCollector = GameObject.Find("CollectorCollider");
             target = null;
+            
         }
 
         // Update is called once per frame
@@ -55,7 +58,19 @@ namespace PirateMap
                 // target = collision.gameObject;
                 InvokeRepeating("SpawnNextChest", 0, 5f);
 
+                storeCanvases = GameObject.FindGameObjectsWithTag("Store");
+                MainCanvases = GameObject.FindGameObjectsWithTag("MainUI");
                 //Aquí llamar canva de tienda
+                if (storeCanvases.Length > 0 && MainCanvases.Length > 0)
+                {
+                    Canvas storeCanvas = storeCanvases[0].GetComponent<Canvas>();
+                    Canvas MainCanvas = MainCanvases[0].GetComponent<Canvas>();
+                    if (storeCanvas != null && MainCanvas != null)
+                    {
+                        storeCanvas.enabled = true;
+                        MainCanvas.enabled = false;
+                    }
+                }
             }
         }
 
@@ -67,6 +82,20 @@ namespace PirateMap
                 CancelInvoke();
                 playerMagnetArea.SetActive(true);
                 playerCollector.SetActive(true);
+
+                storeCanvases = GameObject.FindGameObjectsWithTag("Store");
+                MainCanvases = GameObject.FindGameObjectsWithTag("MainUI");
+                //Aquí llamar canva de tienda
+                if (storeCanvases.Length > 0 && MainCanvases.Length > 0)
+                {
+                    Canvas storeCanvas = storeCanvases[0].GetComponent<Canvas>();
+                    Canvas MainCanvas = MainCanvases[0].GetComponent<Canvas>();
+                    if (storeCanvas != null && MainCanvas != null)
+                    {
+                        storeCanvas.enabled = false;
+                        MainCanvas.enabled = true;
+                    }
+                }
             }
         }
 
