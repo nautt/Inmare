@@ -93,15 +93,20 @@ namespace PirateMap
                             break;
                         case CellType.Treasure:
                             PlaceObject(position, treasureIsland, randomRotation);
-                            Vector3 offset = new Vector3(1f, 0f, 0f);
-                            Vector3 offset2 = new Vector3(-1f, 0f, 0f);
-                            Vector3 offset3 = new Vector3(0f, 0f, 1f);
-                            Vector3 Enemy_position = position + offset;
-                            Vector3 Enemy_position2 = position + offset2;
-                            Vector3 Enemy_position3 = position + offset3;
-                            PlaceObject(Enemy_position, Enemy, randomRotation);
-                            PlaceObject(Enemy_position2, Enemy, randomRotation);
-                            PlaceObject(Enemy_position3, Enemy, randomRotation);
+                            Vector3 offset = new Vector3(1f, 0f, 1f);
+                            int randomNumber = Mathf.RoundToInt(Random.Range(1, 4));
+                            for (int i = 0; i < randomNumber; i++)
+                            {
+                                Vector3 Enemy_position = position + offset;
+                                PlaceObject(Enemy_position, Enemy, randomRotation);
+                                if (i == 2)
+                                {
+                                    offset.z -= 1f;
+                                } else
+                                {
+                                    offset.x -= 1f;
+                                }
+                            }
                             break;
                         default:
                             break;
