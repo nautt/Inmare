@@ -90,12 +90,18 @@ namespace PirateMap
                             break;
                         case CellType.Fort:
                             PlaceObject(position, fortIsland, randomRotation);
-                            Vector3 offset = new Vector3(1f, 0f, 0f);
-                            Vector3 Enemy_position = position + offset;
-                            PlaceObject(Enemy_position, Enemy, randomRotation);
                             break;
                         case CellType.Treasure:
                             PlaceObject(position, treasureIsland, randomRotation);
+                            Vector3 offset = new Vector3(1f, 0f, 0f);
+                            Vector3 offset2 = new Vector3(-1f, 0f, 0f);
+                            Vector3 offset3 = new Vector3(0f, 0f, 1f);
+                            Vector3 Enemy_position = position + offset;
+                            Vector3 Enemy_position2 = position + offset2;
+                            Vector3 Enemy_position3 = position + offset3;
+                            PlaceObject(Enemy_position, Enemy, randomRotation);
+                            PlaceObject(Enemy_position2, Enemy, randomRotation);
+                            PlaceObject(Enemy_position3, Enemy, randomRotation);
                             break;
                         default:
                             break;
