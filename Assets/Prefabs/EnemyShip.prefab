@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7229820387651846669}
   - component: {fileID: 7419859097957703698}
   - component: {fileID: 6230861651680320128}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ MonoBehaviour:
   _maxSpeed: 1
   _minSpeed: 0.5
   _rotationSpeed: 3
-  _obstacleDetectionDistance: 1
+  _obstacleDetectionDistance: 1.5
   _targetAwareness: {fileID: 0}
   _targetDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &7229820387651846669
