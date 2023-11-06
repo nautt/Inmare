@@ -11,12 +11,14 @@ namespace PirateMap
         private GameObject playerMagnetArea;
         private GameObject playerCollector;
         private GameObject target;
+        private bool alternate = false;
 
         [Header("Loot prefabs")]
         public GameObject bronzeChest;
         public GameObject silverChest;
         public GameObject goldenChest;
         public GameObject rareChest;
+        public GameObject shopWelcomeCanvas;
         GameObject[] storeCanvases;
         GameObject[] MainCanvases;
 
@@ -27,14 +29,25 @@ namespace PirateMap
             inventory = player.GetComponent<PlayerInventory>();
             playerMagnetArea = GameObject.Find("MagnetArea");
             playerCollector = GameObject.Find("CollectorCollider");
+            shopWelcomeCanvas = GameObject.Find("ShopWelcome");
             target = null;
-            
+            //shopWelcomeCanvas.SetActive(false);
         }
 
         // Update is called once per frame
         void Update()
         {
-            
+            if (Input.GetKeyDown(KeyCode.F) && alternate == false)
+            {
+                alternate = true;
+                AbrirTienda();
+                shopWelcomeCanvas.SetActive(false);
+            }
+            else if (Input.GetKeyDown(KeyCode.F) && alternate == true)
+            {
+                alternate = false;
+                shopWelcomeCanvas.SetActive(true);
+            }
         }
 
         // private void OnTriggerStay(Collider collision)
@@ -55,6 +68,7 @@ namespace PirateMap
                 Debug.Log("aqui hay que hacer la weaita de la tienda");
                 playerMagnetArea.SetActive(false);
                 playerCollector.SetActive(false);
+                shopWelcomeCanvas.SetActive(true); 
                 // target = collision.gameObject;
                 InvokeRepeating("SpawnNextChest", 0, 5f);
 
@@ -82,6 +96,7 @@ namespace PirateMap
                 CancelInvoke();
                 playerMagnetArea.SetActive(true);
                 playerCollector.SetActive(true);
+                shopWelcomeCanvas.SetActive(false);
 
                 storeCanvases = GameObject.FindGameObjectsWithTag("Store");
                 MainCanvases = GameObject.FindGameObjectsWithTag("MainUI");
@@ -136,6 +151,11 @@ namespace PirateMap
                     treasure.SetTarget(this.transform.position);
                 }
 
+        }
+        void AbrirTienda()
+        {
+            // Aquí coloca el código para abrir la tienda
+            Debug.Log("La tienda se abrirá aquí...");
         }
     }
 }

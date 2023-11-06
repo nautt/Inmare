@@ -355,6 +355,8 @@ MonoBehaviour:
   silverChest: {fileID: 467598489530504817, guid: 1ebe7c7adb8994046a99a6a9b20b72fd, type: 3}
   goldenChest: {fileID: 4648245401545762466, guid: 68dbb7e95e7171d478e8b437aac4e65e, type: 3}
   rareChest: {fileID: 3849981167477142376, guid: 44d7a20544b2b094fbd9fe0190077a20, type: 3}
+  openShop: 102
+  ShopWelcome: {fileID: 0}
 --- !u!1 &3105059423840959139
 GameObject:
   m_ObjectHideFlags: 0
