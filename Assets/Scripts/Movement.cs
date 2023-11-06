@@ -33,9 +33,13 @@ public class Movement : MonoBehaviour
     }
 
     private void Update() {
+        MoveForward();
+    }
+
+    private void FixedUpdate()
+    {
         RotateTowardsRandom();
         RotateTowardsTarget();
-        MoveForward();
         ObstacleDetection();
     }
 
@@ -83,14 +87,14 @@ public class Movement : MonoBehaviour
     private void ObstacleDetection() {
         float angleChange;
 
-        bool rayCastLeft = Physics.Raycast(transform.position + transform.right*-.5f, transform.forward, out RaycastHit hitLeft, _obstacleDetectionDistance, LayerMask.GetMask("Obstacle"));
-        bool rayCastRight = Physics.Raycast(transform.position + transform.right*.5f, transform.forward, out RaycastHit hitRight, _obstacleDetectionDistance, LayerMask.GetMask("Obstacle"));
+        bool rayCastLeft = Physics.Raycast(transform.position + transform.right*-.2f, transform.forward, out RaycastHit hitLeft, _obstacleDetectionDistance, LayerMask.GetMask("Obstacle"));
+        bool rayCastRight = Physics.Raycast(transform.position + transform.right*.2f, transform.forward, out RaycastHit hitRight, _obstacleDetectionDistance, LayerMask.GetMask("Obstacle"));
 
         if (rayCastLeft && rayCastRight) {
             //Debug.Log("Raycast Left: " + hitLeft.distance);
             //Debug.Log("Raycast Right: " + hitRight.distance);
-            Debug.DrawRay(transform.position + transform.right*-.5f, transform.forward * hitLeft.distance, Color.red);
-            Debug.DrawRay(transform.position + transform.right*.5f, transform.forward * hitRight.distance, Color.green);
+            Debug.DrawRay(transform.position + transform.right*-.2f, transform.forward * hitLeft.distance, Color.red);
+            Debug.DrawRay(transform.position + transform.right*.2f, transform.forward * hitRight.distance, Color.green);
             if (hitLeft.distance > hitRight.distance) {
                 angleChange = -10f;
             } else {
