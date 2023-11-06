@@ -12,6 +12,7 @@ namespace PirateMap
         private GameObject playerCollector;
         private GameObject target;
         private bool alternate = false;
+        private bool start = false;
 
         [Header("Loot prefabs")]
         public GameObject bronzeChest;
@@ -31,35 +32,17 @@ namespace PirateMap
             playerCollector = GameObject.Find("CollectorCollider");
             shopWelcomeCanvas = GameObject.Find("ShopWelcome");
             target = null;
-            //shopWelcomeCanvas.SetActive(false);
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F) && alternate == false)
+            if (start == false)
             {
-                alternate = true;
-                AbrirTienda();
+                start = true;
                 shopWelcomeCanvas.SetActive(false);
             }
-            else if (Input.GetKeyDown(KeyCode.F) && alternate == true)
-            {
-                alternate = false;
-                shopWelcomeCanvas.SetActive(true);
-            }
         }
-
-        // private void OnTriggerStay(Collider collision)
-        // {
-        //         if (collision.gameObject.CompareTag("Store"))
-        //         {
-        //             //Debug.Log("Treasure detected");
-
-        //             //Instanciar cofres
-        //             //treasure.SetTarget(transform.parent.position);
-        //         }
-        // }
 
         private void OnTriggerEnter(Collider collision)
         {
@@ -72,7 +55,7 @@ namespace PirateMap
                 // target = collision.gameObject;
                 InvokeRepeating("SpawnNextChest", 0, 5f);
 
-                storeCanvases = GameObject.FindGameObjectsWithTag("Store");
+                /* storeCanvases = GameObject.FindGameObjectsWithTag("Store");
                 MainCanvases = GameObject.FindGameObjectsWithTag("MainUI");
                 //Aquí llamar canva de tienda
                 if (storeCanvases.Length > 0 && MainCanvases.Length > 0)
@@ -84,11 +67,92 @@ namespace PirateMap
                         storeCanvas.enabled = true;
                         MainCanvas.enabled = false;
                     }
+                } */
+            }
+        }
+
+        private void OnTriggerStay(Collider collision) // funciona pero no todos los frames asi que al apretar f no siempre funciona
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                storeCanvases = GameObject.FindGameObjectsWithTag("Store");
+                MainCanvases = GameObject.FindGameObjectsWithTag("MainUI");
+                //Aquí llamar canva de tienda
+                if (Input.GetKeyDown(KeyCode.F) && alternate == false)
+                {
+                    alternate = true;
+                    AbrirTienda();
+                    shopWelcomeCanvas.SetActive(false);
+                    if (storeCanvases.Length > 0 && MainCanvases.Length > 0)
+                    {
+                        Canvas storeCanvas = storeCanvases[0].GetComponent<Canvas>();
+                        Canvas MainCanvas = MainCanvases[0].GetComponent<Canvas>();
+                        if (storeCanvas != null && MainCanvas != null)
+                        {
+                            storeCanvas.enabled = true;
+                            MainCanvas.enabled = false;
+                        }
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.F) && alternate == true)
+                {
+                    if (storeCanvases.Length > 0 && MainCanvases.Length > 0)
+                    {
+                        Canvas storeCanvas = storeCanvases[0].GetComponent<Canvas>();
+                        Canvas MainCanvas = MainCanvases[0].GetComponent<Canvas>();
+                        if (storeCanvas != null && MainCanvas != null)
+                        {
+                            storeCanvas.enabled = false;
+                            MainCanvas.enabled = true;
+                        }
+                    }
+                    shopWelcomeCanvas.SetActive(true);
+                    alternate = false;
                 }
             }
         }
 
-        
+        /* private void OnCollisionStay(Collider collision) // no sirve porque no quiere
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                storeCanvases = GameObject.FindGameObjectsWithTag("Store");
+                MainCanvases = GameObject.FindGameObjectsWithTag("MainUI");
+                //Aquí llamar canva de tienda
+                if (Input.GetKeyDown(KeyCode.F) && alternate == false)
+                {
+                    alternate = true;
+                    AbrirTienda();
+                    shopWelcomeCanvas.SetActive(false);
+                    if (storeCanvases.Length > 0 && MainCanvases.Length > 0)
+                    {
+                        Canvas storeCanvas = storeCanvases[0].GetComponent<Canvas>();
+                        Canvas MainCanvas = MainCanvases[0].GetComponent<Canvas>();
+                        if (storeCanvas != null && MainCanvas != null)
+                        {
+                            storeCanvas.enabled = true;
+                            MainCanvas.enabled = false;
+                        }
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.F) && alternate == true)
+                {
+                    if (storeCanvases.Length > 0 && MainCanvases.Length > 0)
+                    {
+                        Canvas storeCanvas = storeCanvases[0].GetComponent<Canvas>();
+                        Canvas MainCanvas = MainCanvases[0].GetComponent<Canvas>();
+                        if (storeCanvas != null && MainCanvas != null)
+                        {
+                            storeCanvas.enabled = false;
+                            MainCanvas.enabled = true;
+                        }
+                    }
+                    shopWelcomeCanvas.SetActive(true);
+                    alternate = false;
+                }
+            }
+        } */
+
         private void OnTriggerExit(Collider collision)
         {
             if (collision.gameObject.tag == "Player")
@@ -98,7 +162,7 @@ namespace PirateMap
                 playerCollector.SetActive(true);
                 shopWelcomeCanvas.SetActive(false);
 
-                storeCanvases = GameObject.FindGameObjectsWithTag("Store");
+                /* storeCanvases = GameObject.FindGameObjectsWithTag("Store");
                 MainCanvases = GameObject.FindGameObjectsWithTag("MainUI");
                 //Aquí llamar canva de tienda
                 if (storeCanvases.Length > 0 && MainCanvases.Length > 0)
@@ -110,7 +174,7 @@ namespace PirateMap
                         storeCanvas.enabled = false;
                         MainCanvas.enabled = true;
                     }
-                }
+                } */
             }
         }
 
