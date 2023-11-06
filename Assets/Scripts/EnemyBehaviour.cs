@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 [HideInInspector]
 public enum EnemyStates
 {
@@ -13,6 +15,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
 
     [HideInInspector]
+    public float  damage = 1f;
     private targetAwareness _targetAwareness;
     public EnemyStates state;
     private Movement movement;
@@ -64,7 +67,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("CannonBall"))
         {
             Destroy(collision.gameObject);
-            TakeDamage(1f);
+            TakeDamage();
         }
     }
 
