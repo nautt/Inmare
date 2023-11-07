@@ -33,7 +33,7 @@ namespace PirateMap
             playerMagnetArea = GameObject.Find("MagnetArea");
             playerCollector = GameObject.Find("CollectorCollider");
             shopWelcomeCanvas = GameObject.Find("ShopWelcome");
-            shopFarewellCanvas = gameObject.Find("ShopFarewell");
+            shopFarewellCanvas = GameObject.Find("ShopFarewell");
             target = null;
         }
 
@@ -127,6 +127,7 @@ namespace PirateMap
                 playerMagnetArea.SetActive(true);
                 playerCollector.SetActive(true);
                 shopWelcomeCanvas.SetActive(false);
+                shopFarewellCanvas.SetActive(false);
                 alternate = false;
                 storeOpen = false;
 
