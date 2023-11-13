@@ -125,15 +125,6 @@ public class BoatController : MonoBehaviour
         Destroy(boom, 1);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        // Verifica si la colisión es con el objeto objetivo
-        if (collision.gameObject.CompareTag("CannonBall"))
-        {
-            Destroy(collision.gameObject);
-            TakeDamage(1f);
-        }
-    }
 
     private void OnTriggerEnter(Collider collision)
     {
