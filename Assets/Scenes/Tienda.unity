@@ -1102,6 +1102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 1
   PriceTxt: {fileID: 1365910996}
+  rawImageComponent: {fileID: 964276219}
   ShopManager: {fileID: 352809518}
 --- !u!114 &339298294
 MonoBehaviour:
@@ -1227,6 +1228,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DabloonsTxt: {fileID: 956568235}
+  items:
+  - {fileID: 2800000, guid: 44c2ff6f3f82ca5448c1d64a868f64b1, type: 3}
+  - {fileID: 2800000, guid: c38792fb8c993ca43af5f5c00d9ff1aa, type: 3}
+  - {fileID: 2800000, guid: 3064d4375a682ed428a571b665496b5d, type: 3}
+  - {fileID: 2800000, guid: c143c34780af306419076a1a119a7562, type: 3}
+  - {fileID: 2800000, guid: 10437b3cd742a0444891c4231c98d330, type: 3}
+  - {fileID: 2800000, guid: df260e8483ff0674195d1690ab876d13, type: 3}
+  - {fileID: 2800000, guid: f32e197ba178d8a42acb1d29cbfc0993, type: 3}
+  - {fileID: 2800000, guid: 3952f80633460a94a973a5127b705ccf, type: 3}
+  - {fileID: 2800000, guid: 0438c3dcd9c359d45960ee4aa4767ef6, type: 3}
+  - {fileID: 2800000, guid: 047787e18dcc063448dc3fa4632dac1d, type: 3}
+  - {fileID: 2800000, guid: 082f5e204e386524783b717764e5b943, type: 3}
+  - {fileID: 2800000, guid: 669088a6cff702848a3ff9fd6b4e598c, type: 3}
 --- !u!4 &352809520
 Transform:
   m_ObjectHideFlags: 0
@@ -2215,6 +2229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 3
   PriceTxt: {fileID: 1847468783}
+  rawImageComponent: {fileID: 1280015700}
   ShopManager: {fileID: 352809518}
 --- !u!114 &640418246
 MonoBehaviour:
@@ -3306,7 +3321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: f0ad6ae4acfcd3e43aeb703175c91ef7, type: 3}
+  m_Texture: {fileID: 2800000, guid: 669088a6cff702848a3ff9fd6b4e598c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3577,7 +3592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -109659.15, y: 50658.285}
+  m_AnchoredPosition: {x: -227246.66, y: 114776.3}
   m_SizeDelta: {x: 0, y: 453}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1005799299
@@ -5321,6 +5336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 2
   PriceTxt: {fileID: 2125719152}
+  rawImageComponent: {fileID: 1770366947}
   ShopManager: {fileID: 352809518}
 --- !u!114 &1638251042
 MonoBehaviour:
@@ -6055,6 +6071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 4
   PriceTxt: {fileID: 807341227}
+  rawImageComponent: {fileID: 1514080521}
   ShopManager: {fileID: 352809518}
 --- !u!114 &1963412534
 MonoBehaviour:
