@@ -24,6 +24,7 @@ namespace PirateMap
         public GameObject shopFarewellCanvas;
         public List<int> itemsInStore = new List<int>();
         GameObject[] storeCanvases;
+        GameObject[] storeCanvases1;
         GameObject[] MainCanvases;
 
         // Start is called before the first frame update
@@ -41,14 +42,7 @@ namespace PirateMap
             shopFarewellCanvas = GameObject.Find("ShopFarewell");
             target = null;
 
-            storeCanvases = GameObject.FindGameObjectsWithTag("StoreItem");
-            if (storeCanvases.Length > 0)
-            {
-                for(int j = 0; j < storeCanvases.Length; j++)
-                {
-                    storeCanvases[j].GetComponent<ButtonInfo>().itemID = itemsInStore[j];
-                }
-            }
+
         }
 
         // Update is called once per frame
@@ -68,6 +62,17 @@ namespace PirateMap
                 shopWelcomeCanvas.SetActive(false);
                 shopFarewellCanvas.SetActive(true);
                 storeOpen = true;
+
+                storeCanvases1 = GameObject.FindGameObjectsWithTag("StoreItem");
+                if (storeCanvases1.Length > 0)
+                {
+                    for (int j = 0; j < storeCanvases1.Length; j++)
+                    {
+                        storeCanvases1[j].GetComponent<ButtonInfo>().itemID = itemsInStore[j];
+                    }
+                }
+
+
                 if (storeCanvases.Length > 0 && MainCanvases.Length > 0)
                 {
                     Canvas storeCanvas = storeCanvases[0].GetComponent<Canvas>();
@@ -102,14 +107,14 @@ namespace PirateMap
         private void OnTriggerEnter(Collider collision)
         {
             if (collision.gameObject.tag == "Player")
-            {                                
+            {
                 playerMagnetArea.SetActive(false);
                 playerCollector.SetActive(false);
-                shopWelcomeCanvas.SetActive(true); 
+                shopWelcomeCanvas.SetActive(true);
                 alternate = true;
                 storeOpen = false;
                 InvokeRepeating("SpawnNextChest", 0, 5f);
-                
+
 
                 storeCanvases = GameObject.FindGameObjectsWithTag("Store");
                 MainCanvases = GameObject.FindGameObjectsWithTag("MainUI");
@@ -117,7 +122,7 @@ namespace PirateMap
         }
 
 
-    
+
 
         private void OnTriggerExit(Collider collision)
         {
@@ -151,7 +156,7 @@ namespace PirateMap
         {
             GameObject chestInstance = null;
 
-            if(inventory.nBronze > 0)
+            if (inventory.nBronze > 0)
             {
                 chestInstance = Instantiate(bronzeChest);
                 inventory.nBronze--;
@@ -172,7 +177,7 @@ namespace PirateMap
                 inventory.nRare--;
             }
             else
-            {                
+            {
                 inventory.isEmpty = true;
             }
 

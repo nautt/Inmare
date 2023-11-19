@@ -28,7 +28,7 @@ namespace PirateMap
             nSilver = 0;
             nGodlen = 0;
             nRare = 0;
-            nDabloons = 0;
+            nDabloons = 1000;
             isEmpty = true;
         }
 
