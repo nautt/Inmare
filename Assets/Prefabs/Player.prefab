@@ -658,6 +658,9 @@ MonoBehaviour:
   silverChest: {fileID: 467598489530504817, guid: 1ebe7c7adb8994046a99a6a9b20b72fd, type: 3}
   goldenChest: {fileID: 4648245401545762466, guid: 68dbb7e95e7171d478e8b437aac4e65e, type: 3}
   rareChest: {fileID: 3849981167477142376, guid: 44d7a20544b2b094fbd9fe0190077a20, type: 3}
+  shopWelcomeCanvas: {fileID: 0}
+  shopFarewellCanvas: {fileID: 0}
+  itemsInStore: 
 --- !u!1 &1302468601834979115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,8 +1080,8 @@ MonoBehaviour:
   MaxSpeed: 30
   mainCamera: {fileID: 7179933654926358890}
   secondaryCamera: {fileID: 8138239112598604098}
-  health: 5
-  maxhealth: 5
+  health: 10
+  maxhealth: 10
   healthbar: {fileID: 3247349266745649817}
   cannonball: {fileID: 5986481394102937216, guid: 8109baed781040f439ebbc8317e46c9b, type: 3}
   explotion: {fileID: 762360901228653899, guid: 6ea1eb75300960b45a91ff22680a0294, type: 3}
@@ -1102,7 +1105,7 @@ MonoBehaviour:
   nSilver: 0
   nGodlen: 0
   nRare: 0
-  nDabloons: 0
+  nDabloons: 1000
   BronzeText: {fileID: 1970182233819406831}
   SilverText: {fileID: 7710438303148886462}
   GoldenText: {fileID: 6354397320539930138}
@@ -1222,6 +1225,9 @@ MonoBehaviour:
   silverChest: {fileID: 467598489530504817, guid: 1ebe7c7adb8994046a99a6a9b20b72fd, type: 3}
   goldenChest: {fileID: 4648245401545762466, guid: 68dbb7e95e7171d478e8b437aac4e65e, type: 3}
   rareChest: {fileID: 3849981167477142376, guid: 44d7a20544b2b094fbd9fe0190077a20, type: 3}
+  shopWelcomeCanvas: {fileID: 0}
+  shopFarewellCanvas: {fileID: 0}
+  itemsInStore: 
 --- !u!1 &4396446294784893356
 GameObject:
   m_ObjectHideFlags: 0

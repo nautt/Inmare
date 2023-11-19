@@ -31,7 +31,7 @@ namespace PirateMap
         {
             for (int i = 0; i < 5; i++)
             {
-                itemsInStore.Add(Random.Range(1, 13));
+                itemsInStore.Add(Random.Range(0, 12));
             }
             player = GameObject.FindGameObjectWithTag("Player");
             inventory = player.GetComponent<PlayerInventory>();
@@ -102,8 +102,7 @@ namespace PirateMap
         private void OnTriggerEnter(Collider collision)
         {
             if (collision.gameObject.tag == "Player")
-            {                
-                Debug.Log("aqui hay que hacer la weaita de la tienda");
+            {                                
                 playerMagnetArea.SetActive(false);
                 playerCollector.SetActive(false);
                 shopWelcomeCanvas.SetActive(true); 
@@ -173,8 +172,7 @@ namespace PirateMap
                 inventory.nRare--;
             }
             else
-            {
-                Debug.Log("No quedan mas cofres por vender");
+            {                
                 inventory.isEmpty = true;
             }
 

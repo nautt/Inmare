@@ -20,7 +20,8 @@ public class BoatController : MonoBehaviour
     protected PlayerInventory inventory;
 
     [Header("Vida del jugador")]
-    [SerializeField] float health, maxhealth = 5f;
+    [SerializeField] private float health = 10f;
+    [SerializeField] private float maxhealth = 10f;
     [SerializeField] FloatingHealthbar healthbar;
 
     [Header("Disparo")]
