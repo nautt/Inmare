@@ -2468,8 +2468,8 @@ MonoBehaviour:
   numberOfStoreIslands: 10
   numberOfFortIslands: 20
   numberOfTreasureIslands: 10
-  mapSize: 50
-  cellScale: 1
+  width: 100
+  lenght: 100
   visualizeUsingPrebafs: 1
 --- !u!4 &737932368
 Transform:
@@ -5095,7 +5095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -463601.6, y: 257850.75}
+  m_AnchoredPosition: {x: -513654.88, y: 284430.8}
   m_SizeDelta: {x: 0, y: 453}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1751162334
