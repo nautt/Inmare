@@ -9,7 +9,7 @@ public class BoatController : MonoBehaviour
     public Transform Pivot;
     public float SteerPower = 500f;
     public float Power = 5f;
-    public float MaxSpeed = 10f;
+    public float MaxSpeed = 15f;
 
     public Camera mainCamera;
     public Camera secondaryCamera;
@@ -20,7 +20,8 @@ public class BoatController : MonoBehaviour
     protected PlayerInventory inventory;
 
     [Header("Vida del jugador")]
-    [SerializeField] float health, maxhealth = 5f;
+    [SerializeField] public float health = 10f;
+    [SerializeField] public float maxhealth = 10f;
     [SerializeField] FloatingHealthbar healthbar;
 
     [Header("Disparo")]
@@ -162,5 +163,5 @@ public class BoatController : MonoBehaviour
     {
         health = maxhealth;
         healthbar.UpdateHealthBar(health, maxhealth);
-    }
+    }   
 }

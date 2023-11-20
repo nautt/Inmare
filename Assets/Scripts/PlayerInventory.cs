@@ -28,7 +28,7 @@ namespace PirateMap
             nSilver = 0;
             nGodlen = 0;
             nRare = 0;
-            nDabloons = 0;
+            nDabloons = 1000;
             isEmpty = true;
         }
 
@@ -38,7 +38,7 @@ namespace PirateMap
             SilverText.text = "Silver: " + nSilver.ToString();
             GoldenText.text = "Gold: " + nGodlen.ToString();
             RareText.text = "Rare: " + nRare.ToString();
-            CoinsText.text = "Coins: " + nDabloons.ToString();
+            CoinsText.text = "Dabloons: " + nDabloons.ToString();
         }
     }
 }
