@@ -22,12 +22,18 @@ namespace PirateMap
         public GameObject rareChest;
         public GameObject shopWelcomeCanvas;
         public GameObject shopFarewellCanvas;
+        public List<int> itemsInStore = new List<int>();
         GameObject[] storeCanvases;
+        GameObject[] storeCanvases1;
         GameObject[] MainCanvases;
 
         // Start is called before the first frame update
         void Start()
         {
+            for (int i = 0; i < 5; i++)
+            {
+                itemsInStore.Add(Random.Range(0, 12));
+            }
             player = GameObject.FindGameObjectWithTag("Player");
             inventory = player.GetComponent<PlayerInventory>();
             playerMagnetArea = GameObject.Find("MagnetArea");
@@ -35,6 +41,8 @@ namespace PirateMap
             shopWelcomeCanvas = GameObject.Find("ShopWelcome");
             shopFarewellCanvas = GameObject.Find("ShopFarewell");
             target = null;
+
+
         }
 
         // Update is called once per frame
@@ -54,6 +62,17 @@ namespace PirateMap
                 shopWelcomeCanvas.SetActive(false);
                 shopFarewellCanvas.SetActive(true);
                 storeOpen = true;
+
+                storeCanvases1 = GameObject.FindGameObjectsWithTag("StoreItem");
+                if (storeCanvases1.Length > 0)
+                {
+                    for (int j = 0; j < storeCanvases1.Length; j++)
+                    {
+                        storeCanvases1[j].GetComponent<ButtonInfo>().itemID = itemsInStore[j];
+                    }
+                }
+
+
                 if (storeCanvases.Length > 0 && MainCanvases.Length > 0)
                 {
                     Canvas storeCanvas = storeCanvases[0].GetComponent<Canvas>();
@@ -88,36 +107,22 @@ namespace PirateMap
         private void OnTriggerEnter(Collider collision)
         {
             if (collision.gameObject.tag == "Player")
-            {                
-                Debug.Log("aqui hay que hacer la weaita de la tienda");
+            {
                 playerMagnetArea.SetActive(false);
                 playerCollector.SetActive(false);
-                shopWelcomeCanvas.SetActive(true); 
+                shopWelcomeCanvas.SetActive(true);
                 alternate = true;
                 storeOpen = false;
-                // target = collision.gameObject;
                 InvokeRepeating("SpawnNextChest", 0, 5f);
-                
+
 
                 storeCanvases = GameObject.FindGameObjectsWithTag("Store");
                 MainCanvases = GameObject.FindGameObjectsWithTag("MainUI");
-                //Aquí llamar canva de tienda
-                /*
-                if (storeCanvases.Length > 0 && MainCanvases.Length > 0)
-                {
-                    Canvas storeCanvas = storeCanvases[0].GetComponent<Canvas>();
-                    Canvas MainCanvas = MainCanvases[0].GetComponent<Canvas>();
-                    if (storeCanvas != null && MainCanvas != null)
-                    {
-                        storeCanvas.enabled = true;
-                        MainCanvas.enabled = false;
-                    }
-                }*/
             }
         }
 
 
-    
+
 
         private void OnTriggerExit(Collider collision)
         {
@@ -151,7 +156,7 @@ namespace PirateMap
         {
             GameObject chestInstance = null;
 
-            if(inventory.nBronze > 0)
+            if (inventory.nBronze > 0)
             {
                 chestInstance = Instantiate(bronzeChest);
                 inventory.nBronze--;
@@ -173,7 +178,6 @@ namespace PirateMap
             }
             else
             {
-                Debug.Log("No quedan mas cofres por vender");
                 inventory.isEmpty = true;
             }
 

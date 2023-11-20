@@ -15,7 +15,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
 
     [HideInInspector]
-    public float damage = 1f;
+    
     private targetAwareness _targetAwareness;
     public EnemyStates state;
     private Movement movement;
@@ -23,6 +23,8 @@ public class EnemyBehaviour : MonoBehaviour
     [Header("Vida del enemigo")]
     [SerializeField] float health, maxhealth = 5f;
     [SerializeField] FloatingHealthbar healthbar;
+
+    [SerializeField] public float damage = 1f;
 
 
     // Start is called before the first frame update
@@ -79,6 +81,5 @@ public class EnemyBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
+    }    
 }
