@@ -27,7 +27,9 @@ public class BoatController : MonoBehaviour
     [Header("Disparo")]
     public GameObject cannonball;
     public GameObject explotion;
-    public Transform cannon;
+    public Transform cannon_front;
+    public Transform cannon_left;
+    public Transform cannon_right;
     public AudioClip explotionSound;
     private AudioSource audioSource;
     public float force = 10f;
@@ -70,9 +72,19 @@ public class BoatController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time - tiempoUltimoDisparo >= tiempoCooldown)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && Time.time - tiempoUltimoDisparo >= tiempoCooldown)
         {
-            shoot(); // Llama a la función de disparo
+            shoot(cannon_front); // Llama a la función de disparo
+            tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && Time.time - tiempoUltimoDisparo >= tiempoCooldown)
+        {
+            shoot(cannon_left); // Llama a la función de disparo
+            tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow) && Time.time - tiempoUltimoDisparo >= tiempoCooldown)
+        {
+            shoot(cannon_right); // Llama a la función de disparo
             tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
         }
     }
@@ -113,7 +125,7 @@ public class BoatController : MonoBehaviour
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, MaxSpeed);
     }
 
-    private void shoot()
+    private void shoot(Transform cannon)
     {
         GameObject bullet = Instantiate(cannonball, cannon.position, cannon.rotation); //bola de cañon
         GameObject boom = Instantiate(explotion, cannon.position, cannon.rotation); //sonido
