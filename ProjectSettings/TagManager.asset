@@ -9,9 +9,6 @@ TagManager:
   - Heal
   - Event
   - MainUI
-  - StoreItem
-  - Undefined
-  - Enemy
   layers:
   - Default
   - TransparentFX
