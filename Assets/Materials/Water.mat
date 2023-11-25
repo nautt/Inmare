@@ -52,8 +52,8 @@ Material:
     - _Tides_Normal_Strenght: 0.005
     - _Wave_Density: 50
     m_Colors:
-    - _BaseColor: {r: 0.04258633, g: 0.2753984, b: 0.8207547, a: 0}
+    - _BaseColor: {r: 0.0009280478, g: 0, b: 0.023406863, a: 1}
     - _FoamColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 0.68235296}
     - _Ripple_Normal_Speed: {r: 0.01, g: -0.01, b: 0, a: 0}
-    - _RipplesColor: {r: 0.04503382, g: 0.5846499, b: 0.8679245, a: 0}
+    - _RipplesColor: {r: 0.20334375, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
