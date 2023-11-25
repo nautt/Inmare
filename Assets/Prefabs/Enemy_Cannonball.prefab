@@ -13,14 +13,9 @@ GameObject:
   - component: {fileID: 2727971902619510422}
   - component: {fileID: 4175386935321024511}
   - component: {fileID: -3462348002890727606}
-<<<<<<< Updated upstream
-  - component: {fileID: 5099234529252847527}
-  m_Layer: 0
-=======
   - component: {fileID: 6676032883934481062}
-  m_Layer: 9
->>>>>>> Stashed changes
-  m_Name: Cannonball
+  m_Layer: 8
+  m_Name: Enemy_Cannonball
   m_TagString: CannonBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,11 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
-<<<<<<< Updated upstream
---- !u!114 &5099234529252847527
-=======
 --- !u!114 &6676032883934481062
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,17 +143,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5986481394102937216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< Updated upstream
-  m_Script: {fileID: 11500000, guid: 061c0b76bda2ad24da6185fd0a80f0cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-=======
   m_Script: {fileID: 11500000, guid: 15d215e476dfdcf4794c8431a336d874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
   capaAIgnore:
     serializedVersion: 2
-    m_Bits: 8
->>>>>>> Stashed changes
+    m_Bits: 128

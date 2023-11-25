@@ -125,7 +125,10 @@ public class BoatController : MonoBehaviour
         Destroy(boom, 1);
     }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Heal"))

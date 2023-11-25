@@ -10,6 +10,12 @@ public class ShopManager : MonoBehaviour
 {
 
     private PlayerInventory inventory;
+<<<<<<< Updated upstream
+=======
+    private BoatController vidaJugador;
+
+    private CannonBall danioJugador;
+>>>>>>> Stashed changes
 
     // cantidad de items a mostrar
     public int [,] shopItems = new int[5,5];
@@ -38,8 +44,30 @@ public class ShopManager : MonoBehaviour
 
         if (inventory.nDabloons  >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID]){
             // Logica de compra de Item
+<<<<<<< Updated upstream
             inventory.nDabloons -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
             DabloonsTxt.text = "Dabloons:" + inventory.nDabloons;
+=======
+            inventory.nDabloons -= (int)shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
+
+            vidaJugador = GameObject.FindGameObjectWithTag("Player").GetComponent<BoatController>();
+            danioJugador = vidaJugador.cannonball.GetComponent<CannonBall>();
+
+            DabloonsTxt.text = "Dabloons:" + inventory.nDabloons.ToString();
+            // este es para aumentar daño
+            if (ButtonRef.GetComponent<ButtonInfo>().itemID == 8 || ButtonRef.GetComponent<ButtonInfo>().itemID == 9 || ButtonRef.GetComponent<ButtonInfo>().itemID == 10){ 
+                danioJugador.damage *= (1f + shopItems[1, ButtonRef.GetComponent<ButtonInfo>().itemID]);
+
+            }//este es para aumentar la vida
+            else if (ButtonRef.GetComponent<ButtonInfo>().itemID == 0 || ButtonRef.GetComponent<ButtonInfo>().itemID == 1 || ButtonRef.GetComponent<ButtonInfo>().itemID == 2)
+            {
+                vidaJugador.maxhealth *= (1f + shopItems[1, ButtonRef.GetComponent<ButtonInfo>().itemID]);
+            }
+            else if (ButtonRef.GetComponent<ButtonInfo>().itemID == 3)
+            {
+                vidaJugador.Power *= 1.3f;
+            }
+>>>>>>> Stashed changes
         }
     }
 }
