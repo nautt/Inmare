@@ -91,16 +91,19 @@ public class BoatController : MonoBehaviour
     void FixedUpdate()
     {   
         var steer = 0;
-
+        float slow = 1f;
 
         // Direcci�n de rotaci�n
         if (Input.GetKey(KeyCode.A))
         {
             steer = -1;
+            slow = 0.5f;
         }
         if (Input.GetKey(KeyCode.D))
         {
             steer = 1;
+            slow = 0.5f;
+
         }
 
         float rotacion = steer * SteerPower * Time.deltaTime;
@@ -122,7 +125,7 @@ public class BoatController : MonoBehaviour
         }
 
         // Limitar la velocidad m�xima
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, MaxSpeed);
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, MaxSpeed*slow);
     }
 
     private void shoot(Transform cannon)

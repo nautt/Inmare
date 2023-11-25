@@ -1078,8 +1078,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pivot: {fileID: 5530580985747357589}
   SteerPower: 50
-  Power: 15
-  MaxSpeed: 30
+  Power: 13
+  MaxSpeed: 4
   mainCamera: {fileID: 7179933654926358890}
   secondaryCamera: {fileID: 8138239112598604098}
   health: 10
@@ -1647,6 +1647,7 @@ GameObject:
   - component: {fileID: 4589595537308514343}
   - component: {fileID: 8138239112598604098}
   - component: {fileID: 8648560522345134110}
+  - component: {fileID: 8120400823794503626}
   m_Layer: 0
   m_Name: Secondary Camera
   m_TagString: Untagged
@@ -1728,6 +1729,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6522548016596486270}
   m_Enabled: 1
+--- !u!114 &8120400823794503626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6522548016596486270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb26b9e61cc2fb4aa29f43ef6920bc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 5548251249364039902}
+  offset: {x: 0, y: 0.57, z: -1.29}
+  movSmooth: 11
+  rotSmooth: 7
 --- !u!1 &6539615814997216763
 GameObject:
   m_ObjectHideFlags: 0
