@@ -41,18 +41,18 @@ public class ShopManager : MonoBehaviour
         shopItems[1, 11] = 11f; // Barco Acorazado
 
         // Precio
-        shopItems[2, 0] = 1f;
-        shopItems[2, 1] = 2f;
-        shopItems[2, 2] = 3f;
+        shopItems[2, 0] = 2f;
+        shopItems[2, 1] = 4f;
+        shopItems[2, 2] = 8f;
         shopItems[2, 3] = 4f;
-        shopItems[2, 4] = 5f;
+        shopItems[2, 4] = 4f;
         shopItems[2, 5] = 6f;
-        shopItems[2, 6] = 7f;
-        shopItems[2, 7] = 8f;
-        shopItems[2, 8] = 9f;
-        shopItems[2, 9] = 10f;
-        shopItems[2, 10] = 11f;
-        shopItems[2, 11] = 12f;
+        shopItems[2, 6] = 4f;
+        shopItems[2, 7] = 6f;
+        shopItems[2, 8] = 5f;
+        shopItems[2, 9] = 7f;
+        shopItems[2, 10] = 9f;
+        shopItems[2, 11] = 4f;
 
         //DabloonsTxt.text = "Dabloons:" + 
     }

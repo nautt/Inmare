@@ -30,7 +30,7 @@ namespace PirateMap
             nSilver = 0;
             nGodlen = 0;
             nRare = 0;
-            nDabloons = 1000;
+            nDabloons = 10;
             hasKey = false;
             isEmpty = true;
         }
