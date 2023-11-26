@@ -83,7 +83,7 @@ public class BoatController : MonoBehaviour
         secondaryCamera.GetComponent<AudioListener>().enabled = true;
         shopWelcomeCanvas = GameObject.Find("TextoBoss");
 
-        InvokeRepeating("Buff", 90f, 90f);
+        InvokeRepeating("Buff", 120f, 120f);
     }
 
     void Update()
@@ -244,7 +244,7 @@ public class BoatController : MonoBehaviour
             inventory.nSilver = 0;
             inventory.nGodlen = 0;
             inventory.nRare = 0;
-            inventory.nDabloons = 0;
+            inventory.nDabloons = 10;
 
             if (musica.enabled == false)
             {
@@ -281,7 +281,7 @@ public class BoatController : MonoBehaviour
         }
     }
 
-    private Buff(){
-        enemyDamage *= 1.1;
+    private void Buff(){
+        enemyDamage *= 1.1f;
     }
 }
