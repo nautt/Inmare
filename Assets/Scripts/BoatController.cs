@@ -17,6 +17,8 @@ public class BoatController : MonoBehaviour
     public Camera mainCamera;
     public Camera secondaryCamera;
 
+
+
     protected Rigidbody rb;
     protected Quaternion Rotation;
     protected MapVisualizer visualizer;
@@ -36,6 +38,10 @@ public class BoatController : MonoBehaviour
     public Transform cannon_right;
     public AudioClip explotionSound;
     private AudioSource audioSource;
+
+    private AudioSource musica;
+
+    private AudioSource musicaBoss;
     public float force = 10f;
 
     public GameObject yoMismo;
@@ -54,6 +60,12 @@ public class BoatController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        musica = audioSources[1];
+        musicaBoss = audioSources[2];
+        musica.Play();
+
         Rotation = Pivot.localRotation;
         visualizer = GetComponentInParent<MapVisualizer>();
         inventory = GetComponent<PlayerInventory>();
@@ -117,9 +129,13 @@ public class BoatController : MonoBehaviour
             shopWelcomeCanvas.SetActive(false);
             jugador.transform.position = new Vector3(537, 0, 14);
             enemyDamage = 5f;
-            flagsucia=false;
+            flagsucia = false;
+
+            musica.enabled = false;
+            musicaBoss.Play();
         }
-        if (Input.GetKeyUp(KeyCode.G) && inventory.nRare >= 1){
+        if (Input.GetKeyUp(KeyCode.G) && inventory.nRare >= 1)
+        {
             shopWelcomeCanvas.SetActive(false);
         }
     }
@@ -209,6 +225,9 @@ public class BoatController : MonoBehaviour
             inventory.nGodlen = 0;
             inventory.nRare = 0;
             inventory.nDabloons = 0;
+            musica.enabled = false;
+            musicaBoss.enabled = false;
+            musica.Play();
             transform.position = visualizer.puntoInicio;
         }
     }
