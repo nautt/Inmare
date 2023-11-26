@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8450646491159602539}
   - component: {fileID: 7369886494495308421}
   - component: {fileID: 7710438303148886462}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Silver Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 2451256920532373430}
   - component: {fileID: 7289077390245482030}
   - component: {fileID: 7999171188834451705}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Health_canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3986352498082641413}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cannon_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,13 +260,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475730535917308657}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.335, z: 0.34}
+  m_LocalRotation: {x: -0.10452837, y: 0, z: 0, w: 0.9945219}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5548251249364039902}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -12, y: 0, z: 0}
 --- !u!1 &653552570422928331
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 5095575687307381394}
   - component: {fileID: 1626335081824422465}
   - component: {fileID: 1970182233819406831}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bronze Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 7457258437573350493}
   - component: {fileID: 5953605553575794269}
   - component: {fileID: 1356473715298184531}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 4266265845662925335}
   - component: {fileID: 8227138183664530516}
   - component: {fileID: 2799097894965609474}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CollectorCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7812852572908685038}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 3380617843226463056}
   - component: {fileID: 737031620843855888}
   - component: {fileID: 5820500089885476477}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Canvas
   m_TagString: MainUI
   m_Icon: {fileID: 0}
@@ -815,7 +815,7 @@ GameObject:
   - component: {fileID: 6572057256484637984}
   - component: {fileID: 7457625576690408343}
   - component: {fileID: 6354397320539930138}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Golden Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,7 +947,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5530580985747357589}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1447,7 +1447,7 @@ GameObject:
   - component: {fileID: 7194831805900438114}
   - component: {fileID: 9097419005027166471}
   - component: {fileID: 3247349266745649817}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1552,7 +1552,7 @@ GameObject:
   - component: {fileID: 5134754158127669359}
   - component: {fileID: 1465940364550447294}
   - component: {fileID: 8612391597646934400}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rare Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1686,7 +1686,7 @@ GameObject:
   - component: {fileID: 4814181961334866132}
   - component: {fileID: 5738999458249961082}
   - component: {fileID: 8220467256131611164}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Dabloons Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1820,7 +1820,7 @@ GameObject:
   - component: {fileID: 6635842799772794800}
   - component: {fileID: 267325871637086647}
   - component: {fileID: 2864148491127137112}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Key Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1952,7 +1952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2559668289555131119}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cannon_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1967,13 +1967,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5647525908408860263}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.139, y: 0.335, z: 0.029}
+  m_LocalRotation: {x: -0.07391272, y: 0.7032332, z: 0.07391272, w: 0.7032332}
+  m_LocalPosition: {x: 0.125, y: 0.2, z: 0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5548251249364039902}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -12, y: 90, z: 0}
 --- !u!1 &6522548016596486270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,7 +1986,7 @@ GameObject:
   - component: {fileID: 8138239112598604098}
   - component: {fileID: 8648560522345134110}
   - component: {fileID: 8120400823794503626}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Secondary Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2096,7 +2096,7 @@ GameObject:
   - component: {fileID: 9127023550575953346}
   - component: {fileID: 4407774589298658729}
   - component: {fileID: 442801137200003610}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2171,7 +2171,7 @@ GameObject:
   - component: {fileID: 3097085698469824298}
   - component: {fileID: 7179933654926358890}
   - component: {fileID: 3904688726448662926}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -2263,7 +2263,7 @@ GameObject:
   - component: {fileID: 8742339608804313458}
   - component: {fileID: 7892892116330451458}
   - component: {fileID: 6725454723638562801}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MagnetArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2327,7 +2327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5517701646316247316}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cannon_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2342,13 +2342,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8476658893468422758}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.127, y: 0.335, z: 0.033}
+  m_LocalRotation: {x: -0.07391272, y: -0.7032332, z: -0.07391272, w: 0.7032332}
+  m_LocalPosition: {x: -0.125, y: 0.2, z: 0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5548251249364039902}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -12, y: -90, z: 0}
 --- !u!1001 &2515950642560092841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2399,31 +2399,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8419159987339752195, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -7218265209314615879, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -6733177361254619370, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -6523996142157243316, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -4708906425547525126, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -2862632695254185520, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 234720162344085139, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Name
@@ -2431,27 +2431,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5951973884519571600, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7552933894688688095, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7805362086420096067, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8513859187771203891, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8634442290746930798, guid: f3e7067e78547c74b9c6e52c22758490, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
