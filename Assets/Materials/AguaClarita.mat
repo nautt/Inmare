@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: normalito
+  m_Name: AguaClarita
   m_Shader: {fileID: -6465566751694194690, guid: 7e99e195dff392f4a819f91e667dd7ff, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
