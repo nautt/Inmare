@@ -131,7 +131,7 @@ public class BoatController : MonoBehaviour
             tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && inventory.nRare >= 1 && flagsucia)
+        if (Input.GetKeyDown(KeyCode.G) && inventory.hasKey == true && flagsucia)
         {
             GameObject jugador = GameObject.FindGameObjectWithTag("Player");
             shopWelcomeCanvas.SetActive(false);
@@ -214,7 +214,7 @@ public class BoatController : MonoBehaviour
             heal();
         }
 
-        if (inventory.nRare >= 1 && flagsucia)
+        if (collision.gameObject.CompareTag("Heal") && inventory.hasKey == true && flagsucia)
         {// TODO cambiar nrare por la weaita de llave
             shopWelcomeCanvas.SetActive(true);
         }
