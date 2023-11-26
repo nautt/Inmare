@@ -9,7 +9,7 @@ namespace PirateMap
     {
         private Transform parent;
         public Color startColor;
-        public GameObject player, storeIsland, fortIsland, treasureIsland, keyIsland, Enemy, HealArea;
+        public GameObject player, storeIsland, fortIsland, treasureIsland, keyIsland, Enemy, BossEnemy, HealArea;
         public Vector3 puntoInicio;
 
         private void Awake()
@@ -110,6 +110,14 @@ namespace PirateMap
                             break;
                         case CellType.KeyIsland:
                             PlaceObject(position, keyIsland, randomRotation);
+
+                            // offset = new Vector3(1f, 0f, 1f);
+                            // Enemy_position = position + offset;
+                            PlaceObject(position + new Vector3(1f, 0f, 1f), BossEnemy, randomRotation);
+                            
+                            // offset = new Vector3(1f, 0f, -1f);
+                            // Enemy_position = position + offset;
+                            PlaceObject(position + new Vector3(1f, 0f, -1f), BossEnemy, randomRotation);
                             break;
                         default:
                             break;
