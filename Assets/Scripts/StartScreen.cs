@@ -13,8 +13,8 @@ public class StartScreen : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.E) )
+    { 
+        if ( Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.E) )
         {
             Time.timeScale = 1;
             Destroy(this.gameObject);
