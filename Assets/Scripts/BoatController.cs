@@ -93,21 +93,21 @@ public class BoatController : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            mainCamera.enabled = !mainCamera.enabled;
-            secondaryCamera.enabled = !secondaryCamera.enabled;
-            if (secondaryCamera.enabled == true)
-            {
-                secondaryCamera.GetComponent<AudioListener>().enabled = true;
-                mainCamera.GetComponent<AudioListener>().enabled = false;
-            }
-            else
-            {
-                secondaryCamera.GetComponent<AudioListener>().enabled = false;
-                mainCamera.GetComponent<AudioListener>().enabled = true;
-            }
-        }
+        // if (Input.GetKeyDown(KeyCode.Q))
+        // {
+        //     mainCamera.enabled = !mainCamera.enabled;
+        //     secondaryCamera.enabled = !secondaryCamera.enabled;
+        //     if (secondaryCamera.enabled == true)
+        //     {
+        //         secondaryCamera.GetComponent<AudioListener>().enabled = true;
+        //         mainCamera.GetComponent<AudioListener>().enabled = false;
+        //     }
+        //     else
+        //     {
+        //         secondaryCamera.GetComponent<AudioListener>().enabled = false;
+        //         mainCamera.GetComponent<AudioListener>().enabled = true;
+        //     }
+        // }
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && Time.time - tiempoUltimoDisparo >= tiempoCooldown)
         {
@@ -140,6 +140,7 @@ public class BoatController : MonoBehaviour
             flagsucia = false;
 
             musica.enabled = false;
+            musicaBoss.enabled = true;
             musicaBoss.Play();
         }
         if (Input.GetKeyUp(KeyCode.G) && inventory.nRare >= 1)
@@ -239,14 +240,21 @@ public class BoatController : MonoBehaviour
             inventory.nGodlen = 0;
             inventory.nRare = 0;
             inventory.nDabloons = 0;
-            musica.enabled = false;
-            musicaBoss.enabled = false;
-            musica.Play();
+
+            if (musica.enabled == false){
+                musicaBoss.enabled = false;
+                musica.enabled = true;
+                
+            }                        
+            musica.Play();        
             transform.position = visualizer.puntoInicio;
             doubleShootIzq = 1;
             doubleShootDer = 1;
             Power = 13;
             MaxSpeed = 4;
+            enemyDamage = 1f;
+            maxhealth = 10;
+            flagsucia = true;
         }
     }
 
@@ -262,7 +270,7 @@ public class BoatController : MonoBehaviour
         {
             if (isAcorazado == true && collision.gameObject.CompareTag("Enemy"))
             {
-                collision.gameObject.GetComponent<EnemyBehaviour>().TakeDamage(2f);
+                collision.gameObject.GetComponent<EnemyBehaviour>().TakeDamage(MaxSpeed/3);
             }
         }
     }

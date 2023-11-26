@@ -1097,6 +1097,8 @@ MonoBehaviour:
   cannon_right: {fileID: 5517701646316247316}
   explotionSound: {fileID: 8300000, guid: 3e66fbae91fb23b4eba613e1bdd65b04, type: 3}
   force: 10
+  doubleShootIzq: 1
+  doubleShootDer: 1
   yoMismo: {fileID: 0}
   tiempoCooldown: 1
   shopWelcomeCanvas: {fileID: 0}
@@ -2078,10 +2080,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 5548251249364039902}
-  offset: {x: 0, y: 0.57, z: -1.29}
+  offset: {x: 0, y: 0.83, z: -1.29}
   movSmooth: 11
   rotSmooth: 7
-  angleOffset: -20
+  angleOffset: {x: -20.1, y: 0, z: 0}
+  sideEye: 2
 --- !u!1 &6539615814997216763
 GameObject:
   m_ObjectHideFlags: 0
