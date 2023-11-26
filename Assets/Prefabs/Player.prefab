@@ -1748,7 +1748,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0.57, z: -1.29}
   movSmooth: 11
   rotSmooth: 7
-  angleOffset: 45
+  angleOffset: -20
 --- !u!1 &6539615814997216763
 GameObject:
   m_ObjectHideFlags: 0

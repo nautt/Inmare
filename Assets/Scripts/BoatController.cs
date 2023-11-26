@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class BoatController : MonoBehaviour
 {
@@ -35,8 +35,9 @@ public class BoatController : MonoBehaviour
     public Transform cannon_right;
     public AudioClip explotionSound;
     private AudioSource audioSource;
-    public string Boss;
     public float force = 10f;
+
+    public GameObject yoMismo;
 
     [Header("Cooldown para disparar")]
     private float tiempoUltimoDisparo;
@@ -105,9 +106,13 @@ public class BoatController : MonoBehaviour
             tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && inventory.nRare >= 1){
-            SceneManager.LoadScene(Boss);
-            Debug.Log("alo");
+        if (Input.GetKeyDown(KeyCode.G) && inventory.nRare >= 1)
+        {
+
+
+            GameObject jugador = GameObject.FindGameObjectWithTag("Player");
+            jugador.transform.position = new Vector3(517, 0, 4);
+            shopWelcomeCanvas.SetActive(false);
         }
     }
     void FixedUpdate()
@@ -169,6 +174,7 @@ public class BoatController : MonoBehaviour
         {
             heal();
         }
+
         if (inventory.nRare >= 1)
         {// TODO cambiar nrare por la weaita de llave
             shopWelcomeCanvas.SetActive(true);
@@ -177,9 +183,10 @@ public class BoatController : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Heal")){ 
-            shopWelcomeCanvas.SetActive(false); 
-            }
+        if (collision.gameObject.CompareTag("Heal"))
+        {
+            shopWelcomeCanvas.SetActive(false);
+        }
 
     }
 
