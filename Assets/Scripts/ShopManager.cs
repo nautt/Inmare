@@ -13,7 +13,8 @@ public class ShopManager : MonoBehaviour
     private PlayerInventory inventory;
     private BoatController vidaJugador;
 
-    private EnemyBehaviour[] danioJugador;
+    private CannonBall danioJugador;
+    //private EnemyBehaviour[] danioJugador;
 
     // cantidad de items a mostrar
     public float[,] shopItems = new float[3, 12];
@@ -75,17 +76,21 @@ public class ShopManager : MonoBehaviour
             inventory.nDabloons -= (int)shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
 
             vidaJugador = GameObject.FindGameObjectWithTag("Player").GetComponent<BoatController>();
-            danioJugador = GameObject.FindGameObjectsWithTag("Enemy").Select(e => e.GetComponent<EnemyBehaviour>()).Where(e => e != null).ToArray();
+            danioJugador = vidaJugador.cannonball.GetComponent<CannonBall>();
+            //danioJugador = GameObject.FindGameObjectsWithTag("Enemy").Select(e => e.GetComponent<EnemyBehaviour>()).Where(e => e != null).ToArray();
 
             DabloonsTxt.text = "Dabloons:" + inventory.nDabloons.ToString();
             // este es para aumentar daño
             if (ButtonRef.GetComponent<ButtonInfo>().itemID == 8 || ButtonRef.GetComponent<ButtonInfo>().itemID == 9 || ButtonRef.GetComponent<ButtonInfo>().itemID == 10){
-               foreach (EnemyBehaviour obj in danioJugador)
+                danioJugador.damage *= (1f + shopItems[1, ButtonRef.GetComponent<ButtonInfo>().itemID]);
+/*
+                foreach (EnemyBehaviour obj in danioJugador)
                     {                        
-                        obj.damage *= (1f + shopItems[1, ButtonRef.GetComponent<ButtonInfo>().itemID]);
+                        danioJugador.damage *= (1f + shopItems[1, ButtonRef.GetComponent<ButtonInfo>().itemID]);
                     }
-                
-            }//este es para aumentar la vida
+*/
+            }
+            //este es para aumentar la vida
             else if (ButtonRef.GetComponent<ButtonInfo>().itemID == 0 || ButtonRef.GetComponent<ButtonInfo>().itemID == 1 || ButtonRef.GetComponent<ButtonInfo>().itemID == 2)
             {
                 vidaJugador.maxhealth *= (1f + shopItems[1, ButtonRef.GetComponent<ButtonInfo>().itemID]);

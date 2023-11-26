@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3234362344382834008}
   - component: {fileID: 6005940677641446813}
   - component: {fileID: 788415242408053202}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Quarters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1510868024580777640}
   - component: {fileID: 1125553541090631351}
   - component: {fileID: 1562167049879924211}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lamp Light.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5928023350911322689}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 4565278084569032596}
   - component: {fileID: 3407820366005674989}
   - component: {fileID: 2351021824491680291}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Healthbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 4985492228418875215}
   - component: {fileID: 3856273505534678556}
   - component: {fileID: 8737631524186851751}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sail_front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 4831994329828946783}
   - component: {fileID: 3982054591326155303}
   - component: {fileID: 2739523680860376273}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 1294003264730564995}
   - component: {fileID: 6979490768595112123}
   - component: {fileID: 6276893957141632923}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spotter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 143174080045719479}
   - component: {fileID: 2262412009164518687}
   - component: {fileID: 4015447490276600810}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lamp Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 2503216088264355362}
   - component: {fileID: 3553154969697790088}
   - component: {fileID: 6942605992649302594}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mast_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 3342216537161697013}
   - component: {fileID: 5074857317210984736}
   - component: {fileID: 6402673054840585903}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +808,7 @@ GameObject:
   - component: {fileID: 3821991311370861659}
   - component: {fileID: 1666201280031721028}
   - component: {fileID: 343024581604549119}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sail_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +891,7 @@ GameObject:
   - component: {fileID: 6357109888499973453}
   - component: {fileID: 4542618870529727174}
   - component: {fileID: 6964873475721255372}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lamp.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -974,7 +974,7 @@ GameObject:
   - component: {fileID: 2063623207406095729}
   - component: {fileID: 8781438614316490415}
   - component: {fileID: 4393554193519538042}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mast_mid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1057,7 +1057,7 @@ GameObject:
   - component: {fileID: 6566290972224064728}
   - component: {fileID: 1667659259600652961}
   - component: {fileID: 2118564420856879997}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1138,7 +1138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7145829387046049902}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1171,7 +1171,7 @@ GameObject:
   - component: {fileID: 7705487202408624663}
   - component: {fileID: 6502970660488512211}
   - component: {fileID: 7295551022159842979}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mid_Sail_Mast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,7 +1254,7 @@ GameObject:
   - component: {fileID: 4007378261509463432}
   - component: {fileID: 4566293304470149265}
   - component: {fileID: 3962527185546230816}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1342,9 +1342,9 @@ GameObject:
   - component: {fileID: 4881027730445011579}
   - component: {fileID: -6676732449636293663}
   - component: {fileID: 4755016767986036587}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GhostShip
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1614,7 +1614,7 @@ GameObject:
   - component: {fileID: 1471673802054988424}
   - component: {fileID: 2533933080060733230}
   - component: {fileID: 743463218609593715}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1697,7 +1697,7 @@ GameObject:
   - component: {fileID: 8820401368265628428}
   - component: {fileID: 320389944393979492}
   - component: {fileID: 2554645241439025355}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sail_front.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1780,7 +1780,7 @@ GameObject:
   - component: {fileID: 6275020240949640411}
   - component: {fileID: 8678448906546217730}
   - component: {fileID: 4284104913397842115}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BackLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1863,7 +1863,7 @@ GameObject:
   - component: {fileID: 5684629892757127310}
   - component: {fileID: 1483972674554474520}
   - component: {fileID: 8522554562227787104}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sail_back.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1946,7 +1946,7 @@ GameObject:
   - component: {fileID: 5765700093308114150}
   - component: {fileID: 6995863524486838831}
   - component: {fileID: 2118916537435715123}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2021,7 +2021,7 @@ GameObject:
   - component: {fileID: 6685281934338083317}
   - component: {fileID: 6160116899474795493}
   - component: {fileID: 8847120363137835556}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mast_front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2104,7 +2104,7 @@ GameObject:
   - component: {fileID: 7530952384832380288}
   - component: {fileID: 653450479918163435}
   - component: {fileID: 8200617843158895109}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mid_Sail_Mast.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2187,7 +2187,7 @@ GameObject:
   - component: {fileID: 3080827380456397990}
   - component: {fileID: 7856560755850836608}
   - component: {fileID: 1183419816302650066}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2270,7 +2270,7 @@ GameObject:
   - component: {fileID: 8251958074879532980}
   - component: {fileID: 896864220896871550}
   - component: {fileID: 4649007053323467583}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lamp.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2353,7 +2353,7 @@ GameObject:
   - component: {fileID: 727525069476267249}
   - component: {fileID: 5593252690408142606}
   - component: {fileID: 7006008474343070174}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Back_Sail_Mast.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2436,7 +2436,7 @@ GameObject:
   - component: {fileID: 5596285579163642587}
   - component: {fileID: 7688511176855501950}
   - component: {fileID: 4981347566590573121}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Back_Sail_Mast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2519,7 +2519,7 @@ GameObject:
   - component: {fileID: 1419872161050607002}
   - component: {fileID: 2946463213769871871}
   - component: {fileID: 3201726661232968309}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lamp Light.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2603,7 +2603,7 @@ GameObject:
   - component: {fileID: 5765479362663575829}
   - component: {fileID: 1318621119910229957}
   - component: {fileID: 6710110496529787806}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
