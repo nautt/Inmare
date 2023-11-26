@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private PlayerInventory inventory;
     void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+        // inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
 
     }
 

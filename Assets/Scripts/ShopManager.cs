@@ -83,12 +83,15 @@ public class ShopManager : MonoBehaviour
             // este es para aumentar daño
             if (ButtonRef.GetComponent<ButtonInfo>().itemID == 8 || ButtonRef.GetComponent<ButtonInfo>().itemID == 9 || ButtonRef.GetComponent<ButtonInfo>().itemID == 10){
                 danioJugador.damage *= (1f + shopItems[1, ButtonRef.GetComponent<ButtonInfo>().itemID]);
-/*
-                foreach (EnemyBehaviour obj in danioJugador)
-                    {                        
-                        danioJugador.damage *= (1f + shopItems[1, ButtonRef.GetComponent<ButtonInfo>().itemID]);
-                    }
-*/
+            }
+            // Doble disparo
+            else if (ButtonRef.GetComponent<ButtonInfo>().itemID == 4 || ButtonRef.GetComponent<ButtonInfo>().itemID == 5)
+            {
+                vidaJugador.doubleShootDer += 1;
+            }
+            else if (ButtonRef.GetComponent<ButtonInfo>().itemID == 6 || ButtonRef.GetComponent<ButtonInfo>().itemID == 7)
+            {
+                vidaJugador.doubleShootIzq += 1;
             }
             //este es para aumentar la vida
             else if (ButtonRef.GetComponent<ButtonInfo>().itemID == 0 || ButtonRef.GetComponent<ButtonInfo>().itemID == 1 || ButtonRef.GetComponent<ButtonInfo>().itemID == 2)
@@ -98,6 +101,7 @@ public class ShopManager : MonoBehaviour
             else if (ButtonRef.GetComponent<ButtonInfo>().itemID == 3)
             {
                 vidaJugador.Power *= 1.3f;
+                vidaJugador.MaxSpeed += 1f;
             }
         }
     }

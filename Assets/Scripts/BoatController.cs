@@ -31,8 +31,10 @@ public class BoatController : MonoBehaviour
     public Transform cannon_left;
     public Transform cannon_right;
     public AudioClip explotionSound;
-    private AudioSource audioSource;
+    // private AudioSource audioSource;
     public float force = 10f;
+    public int doubleShootIzq = 1;
+    public int doubleShootDer = 1;
 
     [Header("Cooldown para disparar")]
     private float tiempoUltimoDisparo;
@@ -49,42 +51,48 @@ public class BoatController : MonoBehaviour
 
         health = maxhealth;
         healthbar.UpdateHealthBar(health, maxhealth);
-        audioSource = GetComponent<AudioSource>();        
+        // audioSource = GetComponent<AudioSource>();        
 
-        mainCamera.enabled = true;
+        mainCamera.enabled = false;
         
-        secondaryCamera.enabled = false;
-        secondaryCamera.GetComponent<AudioListener>().enabled = false;
+        secondaryCamera.enabled = true;
+        secondaryCamera.GetComponent<AudioListener>().enabled = true;
     }
 
     void Update()
     {
         //Alternar camara
-        if (Input.GetKeyDown(KeyCode.Q)) {
-            mainCamera.enabled = !mainCamera.enabled;
-            secondaryCamera.enabled = !secondaryCamera.enabled;
-            if (secondaryCamera.enabled == true){
-                secondaryCamera.GetComponent<AudioListener>().enabled = true;
-                mainCamera.GetComponent<AudioListener>().enabled = false;
-            }else{
-                secondaryCamera.GetComponent<AudioListener>().enabled = false;
-                mainCamera.GetComponent<AudioListener>().enabled = true;
-            }
-        }
+        // if (Input.GetKeyDown(KeyCode.Q)) {
+        //     mainCamera.enabled = !mainCamera.enabled;
+        //     secondaryCamera.enabled = !secondaryCamera.enabled;
+        //     if (secondaryCamera.enabled == true){
+        //         secondaryCamera.GetComponent<AudioListener>().enabled = true;
+        //         mainCamera.GetComponent<AudioListener>().enabled = false;
+        //     }else{
+        //         secondaryCamera.GetComponent<AudioListener>().enabled = false;
+        //         mainCamera.GetComponent<AudioListener>().enabled = true;
+        //     }
+        // }
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && Time.time - tiempoUltimoDisparo >= tiempoCooldown)
         {
-            shoot(cannon_front); // Llama a la función de disparo
-            tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && Time.time - tiempoUltimoDisparo >= tiempoCooldown)
-        {
-            shoot(cannon_left); // Llama a la función de disparo
+            shoot(cannon_front, 0); // Llama a la función de disparo
             tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
         }
         if (Input.GetKeyDown(KeyCode.RightArrow) && Time.time - tiempoUltimoDisparo >= tiempoCooldown)
         {
-            shoot(cannon_right); // Llama a la función de disparo
+            for (int i = 0; i < doubleShootIzq; i++)
+            {
+                shoot(cannon_left, i);
+            }
+            tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && Time.time - tiempoUltimoDisparo >= tiempoCooldown)
+        {
+            for (int i = 0; i < doubleShootDer; i++)
+            {
+                shoot(cannon_right, i);
+            }
             tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
         }
     }
@@ -97,12 +105,12 @@ public class BoatController : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             steer = -1;
-            slow = 0.5f;
+            slow = 0.8f;
         }
         if (Input.GetKey(KeyCode.D))
         {
             steer = 1;
-            slow = 0.5f;
+            slow = 0.8f;
 
         }
 
@@ -128,17 +136,23 @@ public class BoatController : MonoBehaviour
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, MaxSpeed*slow);
     }
 
-    private void shoot(Transform cannon)
+    private void shoot(Transform cannon, int index)
     {
-        GameObject bullet = Instantiate(cannonball, cannon.position, cannon.rotation); //bola de cañon
-        GameObject boom = Instantiate(explotion, cannon.position, cannon.rotation); //sonido
-        if (explotionSound != null)
+        Vector3 ofs = cannon.position + cannon.right*0.2f * index;
+        GameObject bullet = Instantiate(cannonball, ofs, cannon.rotation); //bola de cañon
+        if (cannon == cannon_front)
         {
-            audioSource.PlayOneShot(explotionSound);
+            bullet.GetComponent<Rigidbody>().velocity = transform.forward * force;
         }
-        bullet.GetComponent<Rigidbody>().velocity = transform.forward * force;
+        else if (cannon == cannon_left)
+        {
+            bullet.GetComponent<Rigidbody>().velocity = transform.right * force;
+        }
+        else if (cannon == cannon_right)
+        {
+            bullet.GetComponent<Rigidbody>().velocity = -transform.right * force;
+        }
         Destroy(bullet, 5);
-        Destroy(boom, 1);
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -161,6 +175,10 @@ public class BoatController : MonoBehaviour
             inventory.nRare = 0;
             inventory.nDabloons = 0;
             transform.position = visualizer.puntoInicio;
+            doubleShootIzq = 1;
+            doubleShootDer = 1;
+            Power = 13;
+            MaxSpeed = 4;
         }
     }
 
