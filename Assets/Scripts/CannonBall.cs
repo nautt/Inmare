@@ -6,7 +6,7 @@ public class CannonBall : MonoBehaviour
 {
     [HideInInspector]
     public float damage;
-
+    private BoatController vidaJugador;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +15,8 @@ public class CannonBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        vidaJugador = GameObject.FindGameObjectWithTag("Player").GetComponent<BoatController>();
+
         if (gameObject.CompareTag("CannonBall")){
             if (collision.gameObject.CompareTag("Enemy"))
             {

@@ -99,6 +99,10 @@ public class ShopManager : MonoBehaviour
             {
                 vidaJugador.Power *= 1.3f;
             }
+             else if (ButtonRef.GetComponent<ButtonInfo>().itemID == 11) //barco acorazado
+            {
+              vidaJugador.isAcorazado = true;
+            }
         }
     }
 }

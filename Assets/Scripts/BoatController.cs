@@ -11,6 +11,8 @@ public class BoatController : MonoBehaviour
     public float Power = 5f;
     public float MaxSpeed = 15f;
 
+    public bool isAcorazado = false;
+
     public Camera mainCamera;
     public Camera secondaryCamera;
 
@@ -49,10 +51,10 @@ public class BoatController : MonoBehaviour
 
         health = maxhealth;
         healthbar.UpdateHealthBar(health, maxhealth);
-        audioSource = GetComponent<AudioSource>();        
+        audioSource = GetComponent<AudioSource>();
 
         mainCamera.enabled = true;
-        
+
         secondaryCamera.enabled = false;
         secondaryCamera.GetComponent<AudioListener>().enabled = false;
     }
@@ -60,13 +62,17 @@ public class BoatController : MonoBehaviour
     void Update()
     {
         //Alternar camara
-        if (Input.GetKeyDown(KeyCode.Q)) {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
             mainCamera.enabled = !mainCamera.enabled;
             secondaryCamera.enabled = !secondaryCamera.enabled;
-            if (secondaryCamera.enabled == true){
+            if (secondaryCamera.enabled == true)
+            {
                 secondaryCamera.GetComponent<AudioListener>().enabled = true;
                 mainCamera.GetComponent<AudioListener>().enabled = false;
-            }else{
+            }
+            else
+            {
                 secondaryCamera.GetComponent<AudioListener>().enabled = false;
                 mainCamera.GetComponent<AudioListener>().enabled = true;
             }
@@ -89,7 +95,7 @@ public class BoatController : MonoBehaviour
         }
     }
     void FixedUpdate()
-    {   
+    {
         var steer = 0;
         float slow = 1f;
 
@@ -125,7 +131,7 @@ public class BoatController : MonoBehaviour
         }
 
         // Limitar la velocidad m�xima
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, MaxSpeed*slow);
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, MaxSpeed * slow);
     }
 
     private void shoot(Transform cannon)
@@ -168,5 +174,16 @@ public class BoatController : MonoBehaviour
     {
         health = maxhealth;
         healthbar.UpdateHealthBar(health, maxhealth);
-    }   
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            if (isAcorazado == true && collision.gameObject.CompareTag("Enemy"))
+            {
+               collision.gameObject.GetComponent<EnemyBehaviour>().TakeDamage(2f);
+            }
+        }
+    }
 }
