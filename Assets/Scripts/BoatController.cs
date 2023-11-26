@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoatController : MonoBehaviour
 {
@@ -34,12 +35,14 @@ public class BoatController : MonoBehaviour
     public Transform cannon_right;
     public AudioClip explotionSound;
     private AudioSource audioSource;
+    public string Boss;
     public float force = 10f;
 
     [Header("Cooldown para disparar")]
     private float tiempoUltimoDisparo;
     public float tiempoCooldown = 1.0f; // Por ejemplo, un segundo de cooldown
-
+    public GameObject shopWelcomeCanvas;
+    private bool start = false;
 
     // Start 
     void Start()
@@ -57,11 +60,19 @@ public class BoatController : MonoBehaviour
 
         secondaryCamera.enabled = false;
         secondaryCamera.GetComponent<AudioListener>().enabled = false;
+        shopWelcomeCanvas = GameObject.Find("TextoBoss");
     }
 
     void Update()
     {
         //Alternar camara
+        if (start == false)
+        {
+            start = true;
+            shopWelcomeCanvas.SetActive(false);
+        }
+
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             mainCamera.enabled = !mainCamera.enabled;
@@ -92,6 +103,11 @@ public class BoatController : MonoBehaviour
         {
             shoot(cannon_right); // Llama a la función de disparo
             tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
+        }
+
+        if (Input.GetKeyDown(KeyCode.G) && inventory.nRare >= 1){
+            SceneManager.LoadScene(Boss);
+            Debug.Log("alo");
         }
     }
     void FixedUpdate()
@@ -153,6 +169,18 @@ public class BoatController : MonoBehaviour
         {
             heal();
         }
+        if (inventory.nRare >= 1)
+        {// TODO cambiar nrare por la weaita de llave
+            shopWelcomeCanvas.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Heal")){ 
+            shopWelcomeCanvas.SetActive(false); 
+            }
+
     }
 
     public void TakeDamage(float damage)
@@ -182,7 +210,7 @@ public class BoatController : MonoBehaviour
         {
             if (isAcorazado == true && collision.gameObject.CompareTag("Enemy"))
             {
-               collision.gameObject.GetComponent<EnemyBehaviour>().TakeDamage(2f);
+                collision.gameObject.GetComponent<EnemyBehaviour>().TakeDamage(2f);
             }
         }
     }

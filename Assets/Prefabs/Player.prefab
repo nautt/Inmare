@@ -1092,8 +1092,10 @@ MonoBehaviour:
   cannon_left: {fileID: 2559668289555131119}
   cannon_right: {fileID: 5517701646316247316}
   explotionSound: {fileID: 8300000, guid: 3e66fbae91fb23b4eba613e1bdd65b04, type: 3}
+  Boss: Boss
   force: 10
   tiempoCooldown: 1
+  shopWelcomeCanvas: {fileID: 0}
 --- !u!114 &7836756434848079068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1746,6 +1748,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0.57, z: -1.29}
   movSmooth: 11
   rotSmooth: 7
+  angleOffset: 45
 --- !u!1 &6539615814997216763
 GameObject:
   m_ObjectHideFlags: 0
