@@ -63,16 +63,6 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        // Verifica si la colisi�n es con el objeto objetivo
-        if (collision.gameObject.CompareTag("CannonBall"))
-        {
-            Destroy(collision.gameObject);
-            TakeDamage(damage);
-        }
-    }
-
     public void TakeDamage(float damage)
     {
         health -= damage;

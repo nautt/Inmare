@@ -12,6 +12,7 @@ TagManager:
   - StoreItem
   - Undefined
   - Enemy
+  - EnemyCannonball
   layers:
   - Default
   - TransparentFX
@@ -23,8 +24,8 @@ TagManager:
   - Enemy
   - 
   - 
-  - 
-  - 
+  - CannonBall
+  - Enemy_Cannonball
   - 
   - 
   - 

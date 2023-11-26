@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa1dcc6af872fb4d9f92ffc1038110d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannonball: {fileID: 5986481394102937216, guid: 8109baed781040f439ebbc8317e46c9b, type: 3}
+  cannonball: {fileID: 5986481394102937216, guid: 237731d2e2a959748b4ad9554351f388, type: 3}
   explotion: {fileID: 762360901228653899, guid: 6ea1eb75300960b45a91ff22680a0294, type: 3}
   cannon: {fileID: 2063042849481184343}
   explotionSound: {fileID: 8300000, guid: 3e66fbae91fb23b4eba613e1bdd65b04, type: 3}
@@ -233,11 +233,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8140baaec1d2e846a2141b65da8556e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
   state: 0
   health: 3
   maxhealth: 3
   healthbar: {fileID: 3993208366359316848}
+  damage: 1
 --- !u!54 &6230861651680320128
 Rigidbody:
   m_ObjectHideFlags: 0
