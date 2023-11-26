@@ -3425,6 +3425,7 @@ MonoBehaviour:
   treasureIsland: {fileID: 4977878520295954290, guid: 29accf157185b914db38371da4967a8e, type: 3}
   keyIsland: {fileID: 4977878520295954290, guid: 9d56cb68e57502a4f96498cc2881ce12, type: 3}
   Enemy: {fileID: 816968399225443886, guid: 78ea14b306d51194fad55f5ea92a4756, type: 3}
+  BossEnemy: {fileID: 5447134076618709389, guid: 57076202776e98745b8a51ab1132292c, type: 3}
   HealArea: {fileID: 3198542611611571168, guid: 9e5443c1cf0c24846a3bda26d26c5eb0, type: 3}
   puntoInicio: {x: 0, y: 0, z: 0}
 --- !u!4 &896724465
@@ -3904,7 +3905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -223055.28, y: 115336.05}
+  m_AnchoredPosition: {x: -241952.58, y: 123527.04}
   m_SizeDelta: {x: 0, y: 453}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1005799299
