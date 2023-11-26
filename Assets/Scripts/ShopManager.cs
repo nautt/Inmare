@@ -76,13 +76,13 @@ public class ShopManager : MonoBehaviour
             inventory.nDabloons -= (int)shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
 
             vidaJugador = GameObject.FindGameObjectWithTag("Player").GetComponent<BoatController>();
-            danioJugador = vidaJugador.cannonball.GetComponent<CannonBall>();
+            //danioJugador = vidaJugador.cannonball.GetComponent<CannonBall>();
             //danioJugador = GameObject.FindGameObjectsWithTag("Enemy").Select(e => e.GetComponent<EnemyBehaviour>()).Where(e => e != null).ToArray();
 
             DabloonsTxt.text = "Dabloons:" + inventory.nDabloons.ToString();
             // este es para aumentar daño
             if (ButtonRef.GetComponent<ButtonInfo>().itemID == 8 || ButtonRef.GetComponent<ButtonInfo>().itemID == 9 || ButtonRef.GetComponent<ButtonInfo>().itemID == 10){
-                danioJugador.damage *= (1f + shopItems[1, ButtonRef.GetComponent<ButtonInfo>().itemID]);
+                vidaJugador.damage *= (1f + shopItems[1, ButtonRef.GetComponent<ButtonInfo>().itemID]);
 /*
                 foreach (EnemyBehaviour obj in danioJugador)
                     {                        

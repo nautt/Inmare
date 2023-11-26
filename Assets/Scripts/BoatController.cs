@@ -25,6 +25,7 @@ public class BoatController : MonoBehaviour
     [Header("Vida del jugador")]
     [SerializeField] public float health = 10f;
     [SerializeField] public float maxhealth = 10f;
+    [SerializeField] public float damage = 1f;
     [SerializeField] FloatingHealthbar healthbar;
 
     [Header("Disparo")]
@@ -44,6 +45,10 @@ public class BoatController : MonoBehaviour
     public float tiempoCooldown = 1.0f; // Por ejemplo, un segundo de cooldown
     public GameObject shopWelcomeCanvas;
     private bool start = false;
+
+    private bool flagsucia = true;
+
+    public float enemyDamage = 1f;
 
     // Start 
     void Start()
@@ -106,12 +111,15 @@ public class BoatController : MonoBehaviour
             tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && inventory.nRare >= 1)
+        if (Input.GetKeyDown(KeyCode.G) && inventory.nRare >= 1 && flagsucia)
         {
-
-
             GameObject jugador = GameObject.FindGameObjectWithTag("Player");
-            jugador.transform.position = new Vector3(517, 0, 4);
+            shopWelcomeCanvas.SetActive(false);
+            jugador.transform.position = new Vector3(537, 0, 14);
+            enemyDamage = 5f;
+            flagsucia=false;
+        }
+        if (Input.GetKeyUp(KeyCode.G) && inventory.nRare >= 1){
             shopWelcomeCanvas.SetActive(false);
         }
     }
@@ -175,7 +183,7 @@ public class BoatController : MonoBehaviour
             heal();
         }
 
-        if (inventory.nRare >= 1)
+        if (inventory.nRare >= 1 && flagsucia)
         {// TODO cambiar nrare por la weaita de llave
             shopWelcomeCanvas.SetActive(true);
         }
@@ -183,7 +191,7 @@ public class BoatController : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Heal"))
+        if (collision.gameObject.CompareTag("Heal") && flagsucia)
         {
             shopWelcomeCanvas.SetActive(false);
         }
