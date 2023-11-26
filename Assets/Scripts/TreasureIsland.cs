@@ -8,6 +8,7 @@ namespace PirateMap
     {
         private Vector3 position;
         public int remainingLoot;
+        public bool hasKey;
         public Vector3 Position {get => position; set => position = value;}
         //public int RemainingLoot {get => remainingLoot; set => remainingLoot = value;}
 
@@ -15,6 +16,7 @@ namespace PirateMap
         {
             this.position = position;
             this.remainingLoot = Random.Range(1, 10);
+            this.hasKey = false;
         }
     }
 }

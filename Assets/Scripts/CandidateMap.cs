@@ -45,6 +45,7 @@ namespace PirateMap
             PlaceRandomIslands(CellType.Store, numberOfStoreIslands);
             PlaceRandomIslands(CellType.Fort, numberOfFortIslands);
             PlaceRandomIslands(CellType.Treasure, numberOfTreasureIslands);
+            PlaceRandomIslands(CellType.KeyIsland, 1);
         }
 
         private bool CheckIfPositionCanBeObstacle(Vector3 position)
@@ -83,7 +84,10 @@ namespace PirateMap
                         case CellType.Treasure:
                             grid.SetCell(coordinates.x, coordinates.z, CellType.Treasure);
                             treasureIslandList.Add(new TreasureIsland(coordinates));
-                            Debug.Log("Agregar Isla tesoro");
+                            break;
+                        case CellType.KeyIsland:
+                            grid.SetCell(coordinates.x, coordinates.z, CellType.KeyIsland);
+                            // treasureIslandList.Add(new TreasureIsland(coordinates));
                             break;
                         default:
                             Debug.Log("Error al colocar isla tipo " + type + " en mapa.");
@@ -95,7 +99,19 @@ namespace PirateMap
                 }
                 tryLimit--;
             }
+
+            // if (type == CellType.Treasure)
+            // {
+            //     SetKeyOnRandomIsland();
+            // }
         }
+
+        // public void SetKeyOnRandomIsland()
+        // {
+        //     var index = Random.Range(0, numberOfTreasureIslands);
+        //     Debug.Log("Tienda numero " + index + " en coordenadas " + treasureIslandList[index].Position);
+        //     treasureIslandList[index].hasKey = true;
+        // }
 
         public MapData ReturnMapData()
         {

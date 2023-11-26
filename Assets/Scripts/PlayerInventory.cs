@@ -11,6 +11,7 @@ namespace PirateMap
         public int nSilver;
         public int nGodlen;
         public int nRare;
+        public bool hasKey;
         public int nDabloons;
 
         public TextMeshProUGUI BronzeText;
@@ -18,6 +19,7 @@ namespace PirateMap
         public TextMeshProUGUI GoldenText;
         public TextMeshProUGUI RareText;
         public TextMeshProUGUI CoinsText;
+        public TextMeshProUGUI keyText;
 
         [HideInInspector] public bool isEmpty;
 
@@ -29,6 +31,7 @@ namespace PirateMap
             nGodlen = 0;
             nRare = 0;
             nDabloons = 1000;
+            hasKey = false;
             isEmpty = true;
         }
 
@@ -39,6 +42,8 @@ namespace PirateMap
             GoldenText.text = "Gold: " + nGodlen.ToString();
             RareText.text = "Rare: " + nRare.ToString();
             CoinsText.text = "Dabloons: " + nDabloons.ToString();
+
+            if(hasKey) keyText.text = "¡Tienes la llave!";
         }
     }
 }

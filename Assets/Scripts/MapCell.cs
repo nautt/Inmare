@@ -33,6 +33,7 @@ namespace PirateMap
         Start,
         Store,
         Treasure,
-        Fort
+        Fort,
+        KeyIsland
     }
 }

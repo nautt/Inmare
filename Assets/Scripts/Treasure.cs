@@ -27,7 +27,8 @@ namespace PirateMap
             Bronze,
             Silver,
             Gold,
-            Rare
+            Rare,
+            Key
         }
 
         public Treasure(TreasureType type)
@@ -90,6 +91,9 @@ namespace PirateMap
                     break;
                 case TreasureType.Rare:
                     inventory.nRare++;
+                    break;
+                case TreasureType.Key:
+                    inventory.hasKey = true;
                     break;
                 default:
                     break;

@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f3b27de9564f94fa8bf9aef2f827ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  type: 4
   price: 10
   moveSpeed: 2
   player: {fileID: 3030758711509008981, guid: 44b1195d1093d9648b831f840b4dd43b, type: 3}
