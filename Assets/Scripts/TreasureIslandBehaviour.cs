@@ -67,7 +67,7 @@ namespace PirateMap
         private void LookAtActiveCamera(GameObject player)
         {
             Camera playerMainCamera = player.transform.Find("Main Camera").GetComponent<Camera>();
-            Camera playerSecondaryCamera = player.transform.Find("Secondary Camera").GetComponent<Camera>();
+            Camera playerSecondaryCamera = GameObject.Find("Secondary Camera").GetComponent<Camera>();
 
             if (playerMainCamera.enabled)
             {
