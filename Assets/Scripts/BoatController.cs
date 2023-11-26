@@ -1,6 +1,7 @@
 ﻿using PirateMap;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -190,21 +191,23 @@ public class BoatController : MonoBehaviour
 
     private void shoot(Transform cannon, int index)
     {
-        Vector3 ofs = cannon.position + cannon.right*0.2f * index;
+        Vector3 ofs = cannon.position + cannon.right * 0.2f * index;
         GameObject bullet = Instantiate(cannonball, ofs, cannon.rotation); //bola de cañon
+        GameObject boom = Instantiate(explotion, cannon.position, cannon.rotation); //sonido
         if (cannon == cannon_front)
         {
-            bullet.GetComponent<Rigidbody>().velocity = transform.forward * force;
+            bullet.GetComponent<Rigidbody>().velocity = cannon.forward * force;
         }
         else if (cannon == cannon_left)
         {
-            bullet.GetComponent<Rigidbody>().velocity = transform.right * force;
+            bullet.GetComponent<Rigidbody>().velocity = cannon.forward * force;
         }
         else if (cannon == cannon_right)
         {
-            bullet.GetComponent<Rigidbody>().velocity = -transform.right * force;
+            bullet.GetComponent<Rigidbody>().velocity = cannon.forward * force;
         }
         Destroy(bullet, 3);
+        Destroy(boom, 1);
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -241,12 +244,13 @@ public class BoatController : MonoBehaviour
             inventory.nRare = 0;
             inventory.nDabloons = 0;
 
-            if (musica.enabled == false){
+            if (musica.enabled == false)
+            {
                 musicaBoss.enabled = false;
                 musica.enabled = true;
-                
-            }                        
-            musica.Play();        
+
+            }
+            musica.Play();
             transform.position = visualizer.puntoInicio;
             doubleShootIzq = 1;
             doubleShootDer = 1;
@@ -270,7 +274,7 @@ public class BoatController : MonoBehaviour
         {
             if (isAcorazado == true && collision.gameObject.CompareTag("Enemy"))
             {
-                collision.gameObject.GetComponent<EnemyBehaviour>().TakeDamage(MaxSpeed/3);
+                collision.gameObject.GetComponent<EnemyBehaviour>().TakeDamage(MaxSpeed / 3);
             }
         }
     }
