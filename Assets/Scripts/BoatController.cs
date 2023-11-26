@@ -152,7 +152,7 @@ public class BoatController : MonoBehaviour
         {
             bullet.GetComponent<Rigidbody>().velocity = -transform.right * force;
         }
-        Destroy(bullet, 5);
+        Destroy(bullet, 3);
     }
 
     private void OnTriggerEnter(Collider collision)

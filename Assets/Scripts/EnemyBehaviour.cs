@@ -39,6 +39,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         health = maxhealth;
         healthbar.UpdateHealthBar(health, maxhealth);
+        InvokeRepeating("Buff",60f, 60f);
     }
 
     // Update is called once per frame
@@ -72,4 +73,11 @@ public class EnemyBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
     }    
+
+    public void Buff(){
+        damage += damage*0.5f;
+        maxhealth += maxhealth*.5f;
+        health = maxhealth;
+        healthbar.UpdateHealthBar(health, maxhealth);
+    }
 }
