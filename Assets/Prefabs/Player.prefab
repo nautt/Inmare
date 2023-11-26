@@ -1120,7 +1120,7 @@ MonoBehaviour:
   nGodlen: 0
   nRare: 0
   hasKey: 0
-  nDabloons: 100
+  nDabloons: 0
   BronzeText: {fileID: 1970182233819406831}
   SilverText: {fileID: 7710438303148886462}
   GoldenText: {fileID: 6354397320539930138}

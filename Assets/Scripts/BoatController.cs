@@ -81,6 +81,8 @@ public class BoatController : MonoBehaviour
         secondaryCamera.enabled = true;
         secondaryCamera.GetComponent<AudioListener>().enabled = true;
         shopWelcomeCanvas = GameObject.Find("TextoBoss");
+
+        InvokeRepeating("Buff", 90f, 90f);
     }
 
     void Update()
@@ -273,5 +275,9 @@ public class BoatController : MonoBehaviour
                 collision.gameObject.GetComponent<EnemyBehaviour>().TakeDamage(MaxSpeed/3);
             }
         }
+    }
+
+    private Buff(){
+        enemyDamage *= 1.1;
     }
 }
