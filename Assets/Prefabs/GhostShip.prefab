@@ -305,8 +305,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 3407820366005674989}
-  target: {fileID: 0}
+  target: {fileID: 4671300687315387191}
   offset: {x: 0, y: 0, z: 0}
+  player: {fileID: 3879669905628693483, guid: 32dcd5a553ddf9f4ebc914d64d9d8577, type: 3}
 --- !u!1 &1567493404583347276
 GameObject:
   m_ObjectHideFlags: 0

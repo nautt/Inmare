@@ -1685,3 +1685,4 @@ MonoBehaviour:
   slider: {fileID: 1183405351676829571}
   target: {fileID: 8051171117915653933}
   offset: {x: 0, y: 0, z: 0}
+  player: {fileID: 3879669905628693483, guid: 32dcd5a553ddf9f4ebc914d64d9d8577, type: 3}

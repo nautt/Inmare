@@ -115,6 +115,10 @@ public class BoatController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) && Time.time - tiempoUltimoDisparo >= tiempoCooldown)
         {
             shoot(cannon_front, 0); // Llama a la función de disparo
+            if (explotionSound != null)
+            {
+                audioSource.PlayOneShot(explotionSound);
+            }
             tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
         }
         if (Input.GetKeyDown(KeyCode.RightArrow) && Time.time - tiempoUltimoDisparo >= tiempoCooldown)
@@ -123,6 +127,10 @@ public class BoatController : MonoBehaviour
             {
                 shoot(cannon_left, i);
             }
+            if (explotionSound != null)
+            {
+                audioSource.PlayOneShot(explotionSound);
+            }
             tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow) && Time.time - tiempoUltimoDisparo >= tiempoCooldown)
@@ -130,6 +138,10 @@ public class BoatController : MonoBehaviour
             for (int i = 0; i < doubleShootDer; i++)
             {
                 shoot(cannon_right, i);
+            }
+            if (explotionSound != null)
+            {
+                audioSource.PlayOneShot(explotionSound);
             }
             tiempoUltimoDisparo = Time.time; // Actualiza el tiempo del último disparo
         }
@@ -184,7 +196,7 @@ public class BoatController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.S))
         {
-            rb.AddForce(-forward * (Power / 2));
+            rb.AddForce(-forward * Power*3/4);
         }
 
         // Limitar la velocidad m�xima
@@ -196,9 +208,10 @@ public class BoatController : MonoBehaviour
         Vector3 ofs = cannon.position + cannon.right * 0.2f * index;
         GameObject bullet = Instantiate(cannonball, ofs, cannon.rotation); //bola de cañon
         GameObject boom = Instantiate(explotion, cannon.position, cannon.rotation); //sonido
+        Vector3 velocidadActual = gameObject.GetComponent<Rigidbody>().velocity;
         if (cannon == cannon_front)
         {
-            bullet.GetComponent<Rigidbody>().velocity = cannon.forward * force;
+            bullet.GetComponent<Rigidbody>().velocity = cannon.forward * force + velocidadActual;
         }
         else if (cannon == cannon_left)
         {

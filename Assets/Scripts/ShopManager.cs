@@ -97,6 +97,7 @@ public class ShopManager : MonoBehaviour
             else if (ButtonRef.GetComponent<ButtonInfo>().itemID == 0 || ButtonRef.GetComponent<ButtonInfo>().itemID == 1 || ButtonRef.GetComponent<ButtonInfo>().itemID == 2)
             {
                 vidaJugador.maxhealth *= (1f + shopItems[1, ButtonRef.GetComponent<ButtonInfo>().itemID]);
+                vidaJugador.health *= (1f + shopItems[1, ButtonRef.GetComponent<ButtonInfo>().itemID]);
             }
             else if (ButtonRef.GetComponent<ButtonInfo>().itemID == 3)
             {

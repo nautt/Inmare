@@ -8,11 +8,10 @@ public class FloatingHealthbar : MonoBehaviour
     [SerializeField] public Slider slider;
     [SerializeField] public Transform target;
     [SerializeField] public Vector3 offset;
-    private GameObject player;
+    public GameObject player;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void UpdateHealthBar(float currentValue, float maxValue)
