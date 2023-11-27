@@ -20,7 +20,7 @@ namespace PirateMap
                 {
                     treasure.Collect();
                 }
-                gameObject.GetComponent<AudioSource>().PlayOneShot(pickupSound);
+                gameObject.GetComponent<AudioSource>().PlayOneShot(pickupSound, 0.5f);
             }
         }
     }
