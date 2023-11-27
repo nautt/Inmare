@@ -6,10 +6,10 @@ public class Movement : MonoBehaviour
 {
 
     [SerializeField]
-    private float _maxSpeed = 3f;
+    public float _maxSpeed = 3f;
 
     [SerializeField]
-    private float _minSpeed = 1f;
+    public float _minSpeed = 1f;
 
     [SerializeField]
     private float _rotationSpeed = 3f;
@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
     [HideInInspector]
     public Vector3 _targetDirection;
 
-    private float _speed;
+    public float _speed;
     private float _timeUntilDirectionChange;
 
     private void Awake() {

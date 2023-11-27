@@ -19,6 +19,8 @@ public class EnemyBehaviour : MonoBehaviour
     private targetAwareness _targetAwareness;
     public EnemyStates state;
     private Movement movement;
+    public float stopDistance = 1f;
+    private float original_speed;
 
     [Header("Vida del enemigo")]
     [SerializeField] float health, maxhealth = 5f;
@@ -33,6 +35,7 @@ public class EnemyBehaviour : MonoBehaviour
         _targetAwareness = GetComponent<targetAwareness>();
         state = EnemyStates.walking;
         movement = GetComponent<Movement>();
+        original_speed = movement._speed;
     }
 
     private void Start()
@@ -64,7 +67,12 @@ public class EnemyBehaviour : MonoBehaviour
         if (state == EnemyStates.attacking)
         {
             movement.changeDirection(_targetAwareness.ClosestTarget.position);
-
+            if (Vector3.Distance(_targetAwareness.ClosestTarget.transform.position, this.transform.position) < stopDistance)
+            {
+                movement._speed = 0f;
+            } else {
+                movement._speed = original_speed;
+            }
         }
     }
 
