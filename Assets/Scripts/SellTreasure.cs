@@ -113,7 +113,7 @@ namespace PirateMap
                 shopWelcomeCanvas.SetActive(true);
                 alternate = true;
                 storeOpen = false;
-                InvokeRepeating("SpawnNextChest", 0, 5f);
+                InvokeRepeating("SpawnNextChest", 0, 0.5f);
 
 
                 storeCanvases = GameObject.FindGameObjectsWithTag("Store");

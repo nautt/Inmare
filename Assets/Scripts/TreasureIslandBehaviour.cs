@@ -51,7 +51,7 @@ namespace PirateMap
         private void OnTriggerEnter(Collider collision)
         {
             if (collision.gameObject.tag == "Player"){
-                InvokeRepeating("SpawnRandomChest", 0, 5f);
+                InvokeRepeating("SpawnRandomChest", 0, 1f);
             }
         }
 

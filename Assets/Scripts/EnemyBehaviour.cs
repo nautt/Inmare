@@ -45,6 +45,10 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (transform.rotation.eulerAngles.x != 0 || transform.rotation.eulerAngles.z != 0)
+        {
+            transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+        }
         if (_targetAwareness.IsAware) 
         {
             state = EnemyStates.attacking;
