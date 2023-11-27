@@ -43,7 +43,7 @@ namespace PirateMap
             RareText.text = "Rare: " + nRare.ToString();
             CoinsText.text = "Dabloons: " + nDabloons.ToString();
 
-            if(hasKey) keyText.text = "¡Tienes la llave!";
+            if(hasKey) keyText.text = "¡Ve al portal!";
         }
     }
 }
