@@ -156,25 +156,27 @@ namespace PirateMap
         {
             GameObject chestInstance = null;
 
-            if (inventory.nBronze > 0)
+            // if (inventory.nBronze > 0)
+            if (inventory.nRare > 0)
             {
-                chestInstance = Instantiate(bronzeChest);
-                inventory.nBronze--;
+                chestInstance = Instantiate(rareChest);
+                inventory.nRare--;
+            }
+            // else if (inventory.nSilver > 0)
+            else if (inventory.nGodlen > 0)
+            {
+                chestInstance = Instantiate(goldenChest);
+                inventory.nGodlen--;
             }
             else if (inventory.nSilver > 0)
             {
                 chestInstance = Instantiate(silverChest);
                 inventory.nSilver--;
             }
-            else if (inventory.nGodlen > 0)
+            else if (inventory.nBronze > 0)
             {
-                chestInstance = Instantiate(goldenChest);
-                inventory.nGodlen--;
-            }
-            else if (inventory.nRare > 0)
-            {
-                chestInstance = Instantiate(rareChest);
-                inventory.nRare--;
+                chestInstance = Instantiate(bronzeChest);
+                inventory.nBronze--;
             }
             else
             {
